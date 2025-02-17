@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/margin_15"
+                android:padding="@dimen/margin_20"
+                android:text="@string/please_scan_qr_code">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/scan_qr_code"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="@dimen/margin_15"
+                android:src="@drawable/qr_code">
+
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/margin_20"
+                android:padding="@dimen/margin_20"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@string/or">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/margin_15"
+                android:padding="@dimen/margin_20"
+                android:text="@string/please_type_ndn_code">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/nddn_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rectangular_bg"
+                android:gravity="start"
+                android:hint="@string/type_ndn_code"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="200"
+                android:layout_margin="@dimen/margin_2"
+                android:padding="@dimen/padding_medium"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/text_size_small" />
+            <com.citizen.fmc.utils.ButtonView
+                android:id="@+id/submit_complaint_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_normal"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:buttonColor="@color/colorDarkBlue"
+                app:cornerRadius="@dimen/corner_radius_small" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

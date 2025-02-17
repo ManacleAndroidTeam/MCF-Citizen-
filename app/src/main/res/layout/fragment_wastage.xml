@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.citizen.fmc.utils.ButtonView
+        android:id="@+id/scan_qr_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_normal"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:text="@string/scan_qr"
+        android:layout_margin="@dimen/margin_50"
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:buttonColor="@color/colorDarkBlue"
+        app:cornerRadius="@dimen/corner_radius_small" />
+
+    <LinearLayout
+        android:id="@+id/layout_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/padding_large"
+        android:paddingBottom="@dimen/padding_small">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/qr_code"
+                android:textAllCaps="true"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_extra_small" />
+
+            <EditText
+                android:id="@+id/qr_code_data_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@null"
+                android:gravity="start"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="200"
+                android:padding="@dimen/padding_medium"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/text_size_small" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+
+        <com.citizen.fmc.utils.ButtonView
+            android:id="@+id/segregate_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_normal"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/Segragate"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:layout_margin="@dimen/margin_10"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:buttonColor="@color/colorDarkBlue"
+            app:cornerRadius="@dimen/corner_radius_small" />
+
+        <com.citizen.fmc.utils.ButtonView
+            android:id="@+id/non_segragate_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_normal"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_margin="@dimen/margin_10"
+            android:textAllCaps="true"
+            android:text="@string/NonSegragate"
+
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:buttonColor="@color/colorDarkBlue"
+            app:cornerRadius="@dimen/corner_radius_small" />
+    </LinearLayout>
+
+
+</LinearLayout>

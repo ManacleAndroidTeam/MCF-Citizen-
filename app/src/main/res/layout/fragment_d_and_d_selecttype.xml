@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/epc_code_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/margin_15"
+        android:padding="@dimen/margin_15"
+        android:text="">
+
+    </TextView>
+    <TextView
+        android:id="@+id/address_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/margin_15"
+        android:padding="@dimen/margin_15"
+        android:text="">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seggragate_ll"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/seggreagate_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_15"
+            android:src="@drawable/wastagesegregate">
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/margin_15"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_15"
+            android:text="@string/Segragate">
+
+        </TextView>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/non_seggragate_ll"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/non_seggreagate_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_15"
+            android:src="@drawable/nonsegregate">
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/margin_15"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_15"
+            android:text="@string/NonSegragate">
+
+        </TextView>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/locked_ll"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/mark_locked_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_15"
+            android:src="@drawable/marklocked">
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/margin_15"
+            android:layout_weight="1"
+            android:padding="@dimen/margin_15"
+            android:gravity="center"
+            android:text="@string/locked">
+
+        </TextView>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/feedback_ll"
+        android:weightSum="2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_15"
+            android:src="@drawable/feedback">
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/margin_15"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:padding="@dimen/margin_15"
+            android:text="@string/feedback">
+
+        </TextView>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/complaint_ll"
+        android:weightSum="2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_15"
+            android:src="@drawable/complaint">
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/margin_15"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/margin_15"
+            android:text="@string/complaint">
+
+        </TextView>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent_layout"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/margin_3"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/RV_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_5">
+
+        <include layout="@layout/layout_text_view_serial_num" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/notification_image_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:failureImage="@drawable/place_holder_no_image"
+            app:progressBarAutoRotateInterval="1000"
+            app:progressBarImage="@drawable/ic_loading_small_dots"
+            app:retryImage="@drawable/ic_loading_small_dots" />
+
+        <LinearLayout
+            android:id="@+id/info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_toEndOf="@id/notification_image_view"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/message_title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/notification_title"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/message_date_time_stamp_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3"
+                android:gravity="center_vertical"
+                android:text="@string/notification_date_time"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/message_body_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

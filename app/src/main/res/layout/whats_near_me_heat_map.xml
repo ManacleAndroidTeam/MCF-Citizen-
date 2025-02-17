@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/radio_group_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/margin_2"
+            app:cardElevation="@dimen/margin_3"
+            app:cardUseCompatPadding="true">
+
+            <co.ceryle.radiorealbutton.RadioRealButtonGroup
+                android:id="@+id/radio_gp_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:rrbg_animateDrawables_enter="overshoot"
+                app:rrbg_animateDrawables_enterDuration="500"
+                app:rrbg_animateDrawables_scale="1.2"
+                app:rrbg_animateTexts_enter="overshoot"
+                app:rrbg_animateTexts_enterDuration="500"
+                app:rrbg_backgroundColor="@color/colorWhite"
+                app:rrbg_checkedPosition="0"
+                app:rrbg_dividerColor="@color/colorBlueHeader"
+                app:rrbg_radius="2dp"
+                app:rrbg_selectorAboveOfBottomLine="true"
+                app:rrbg_selectorAnimationType="scale_x"
+                app:rrbg_selectorColor="@color/colorGreen"
+                app:rrbg_selectorDividerSize="2dp"
+                app:rrbg_selectorRadius="0dp"
+                app:rrbg_selectorSize="5dp">
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    app:rrb_drawable="@drawable/ic_map_standard"
+                    app:rrb_drawableGravity="top"
+                    app:rrb_drawablePadding="@dimen/margin_5"
+                    app:rrb_rippleColor="@color/colorPrimary"
+                    app:rrb_text="STANDARD"
+                    app:rrb_textColor="@color/colorBlack"
+                    app:rrb_textColorTo="@color/colorRed"
+                    app:rrb_textGravity="center"
+                    app:rrb_textSize="12sp"
+                    app:rrb_textStyle="bold" />
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:rrb_drawable="@drawable/ic_hybrid_map"
+                    app:rrb_drawableGravity="top"
+                    app:rrb_drawablePadding="@dimen/margin_5"
+                    app:rrb_rippleColor="@color/colorPrimary"
+                    app:rrb_text="HYBRID"
+                    app:rrb_textColor="@color/colorBlack"
+                    app:rrb_textColorTo="@color/colorRed"
+                    app:rrb_textGravity="center"
+                    app:rrb_textSize="12sp"
+                    app:rrb_textStyle="bold" />
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:rrb_drawable="@drawable/ic_satellite_map"
+                    app:rrb_drawableGravity="top"
+                    app:rrb_drawablePadding="@dimen/margin_5"
+                    app:rrb_rippleColor="@color/colorPrimary"
+                    app:rrb_text="SATELLITE"
+                    app:rrb_textColor="@color/colorBlack"
+                    app:rrb_textColorTo="@color/colorRed"
+                    app:rrb_textGravity="center"
+                    app:rrb_textSize="12sp"
+                    app:rrb_textStyle="bold" />
+            </co.ceryle.radiorealbutton.RadioRealButtonGroup>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_group_card_view">
+
+            <fragment
+                android:id="@+id/map_fragment"
+                class="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ipaulpro.afilechooser.test.aFileChooser-mergeDebugAndroidTestResources-4:/values-pl/values-pl.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\JYOTI PANDEY\\Desktop\\For SetUp project\\mcf_citizen_7January\\mcf_citizen\\aFileChooser\\build\\intermediates\\packaged_res\\debug\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,108,166,246",
+                        "endColumns": "52,57,79,84",
+                        "endOffsets": "103,161,241,326"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,108,166,347",
+                        "endColumns": "52,57,79,84",
+                        "endOffsets": "103,161,241,427"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\JYOTI PANDEY\\.gradle\\caches\\8.12\\transforms\\fb3da8c8c8047450879bf86fc039bc31\\transformed\\core-1.0.0\\res\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "246",
+                        "endColumns": "100",
+                        "endOffsets": "342"
+                    }
+                }
+            ]
+        }
+    ]
+}

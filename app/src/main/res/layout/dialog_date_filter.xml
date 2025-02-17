@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    android:paddingTop="0dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginBottom="0dp"
+    android:layout_marginTop="0dp">
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Select Date Filter"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
+            android:gravity="start"/>
+
+        <ImageView
+            android:id="@+id/close_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_cancel_24"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:padding="10dp"
+        android:textSize="@dimen/text_size_small"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGrey"/>
+
+
+    <TextView
+        android:id="@+id/text_yesterday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yesterday"
+        android:padding="10dp"
+        android:textSize="@dimen/text_size_small"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGrey"/>
+
+    <TextView
+        android:id="@+id/text_last_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Week"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGrey"/>
+
+    <TextView
+        android:id="@+id/text_this_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This Month"
+        android:fontFamily="@font/poppins_regular"
+        android:padding="10dp"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGrey"/>
+
+
+    <TextView
+        android:id="@+id/text_last_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Month"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGrey"/>
+
+    <TextView
+        android:id="@+id/text_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:fontFamily="@font/poppins_regular"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

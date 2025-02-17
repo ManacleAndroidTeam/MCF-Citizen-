@@ -1,0 +1,111 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blueColorBg</item>
+        <item name="colorPrimaryDark">@color/blueColorBg</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/encode_sans_semi_condensed_medium</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DemoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Defining that new color in ColorPrimaryDark -->
+        <item name="colorPrimaryDark">@color/blueColorBg</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeActionBar" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blueColorBg</item>
+        <item name="colorPrimaryDark">@color/blueColorBg</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/encode_sans_semi_condensed_medium</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <!-- Splash Screen theme. -->
+    <!--<style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">-->
+    <!--<item name="android:windowBackground">@drawable/ic_launcher_background</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomSpotsDialogStyle" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogSpotColor">@color/colorLightBlue</item>
+        <item name="DialogSpotCount">6</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+        <item name="spinBars">true</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="dialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+    <style name="dialogSlideAnimation" parent="@android:style/Theme.DeviceDefault.Dialog.MinWidth">
+        <item name="android:windowAnimationStyle">@style/dialogAnimation</item>
+    </style>
+
+    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <!--<item name="commitIcon">@drawable/ic_search_commit</item>-->
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorYellow</item>
+        <item name="android:textColorHint">@color/colorYellow</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:gravity">center_vertical</item>
+        <!--<item name="autoCompleteTextViewStyle">@style/AutoCompleteTextViewStyle</item>-->
+        <!--<item name="suggestionRowLayout">@layout/search_view_suggestion_row</item>-->
+        <!--<item name="android:maxWidth">9999dp</item>-->
+    </style>
+
+    <style name="CheckBoxTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorLightGrey</item>
+        <item name="colorControlActivated">@color/colorDarkGrey</item>
+    </style>
+
+    <style name="MySpinnerLook" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.DeviceDefault.Spinner">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColor">@color/colorLightGrey</item>
+        <item name="android:textSize">@dimen/text_size_extra_small</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <!--<item name="colorAccent">@color/Color Name</item>-->
+        <!--<item name="colorControlNormal">@color/Color Name</item>-->
+        <!--<item name="colorControlActivated">@color/Color Name</item>-->
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+</resources>

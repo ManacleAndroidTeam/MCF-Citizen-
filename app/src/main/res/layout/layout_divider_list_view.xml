@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorBlueHeader"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold" />
+
+        <!-- <com.officer.ndmc.utils.ButtonView
+             android:id="@+id/scan_qr_code_button"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/standard_height"
+             android:layout_alignParentBottom="true"
+             android:layout_margin="@dimen/margin_5"
+             android:gravity="center"
+             android:text="Scan Hawker QR"
+             android:textAllCaps="false"
+             android:textColor="@color/colorWhite"
+             android:textStyle="bold"
+             android:visibility="gone"
+
+             app:cornerRadius="@dimen/margin_2" />-->
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_count"
+            android:dividerHeight="1dp"
+            android:cacheColorHint="@color/colorWhite"
+            android:divider="#000000"
+            android:scrollbars="none" />
+
+        <!--  <ListView
+              android:id="@+id/list_view"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_above="@id/scan_qr_code_button"
+              android:layout_below="@id/tv_count"
+              android:dividerHeight="1dp"
+              android:scrollbars="none" />-->
+
+        <TextView
+            android:id="@+id/no_data_found_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="@dimen/padding_10"
+            android:drawableTop="@drawable/ic_question"
+            android:gravity="center"
+            android:text="Oops, Item(s) Not Found ! "
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_16"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimary"
+            app:borderWidth="0dp"
+            app:elevation="@dimen/margin_5"
+            app:fabSize="auto"
+            app:srcCompat="@drawable/ic_map_24dp" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

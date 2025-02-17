@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/layout_header"
+        layout="@layout/app_bar_main" />
+
+    <include
+        layout="@layout/layout_frame_with_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_header"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_extra_large"
+            android:paddingRight="@dimen/padding_extra_large">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:background="@drawable/circle_gray_border"
+                    android:visibility="visible">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/user_profile_sdv"
+                        android:layout_width="@dimen/circle_image_width"
+                        android:layout_height="@dimen/circle_image_width"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        app:failureImage="@drawable/place_holder_no_image"
+                        app:progressBarAutoRotateInterval="1000"
+                        app:progressBarImage="@drawable/ic_loading_small_dots"
+                        app:retryImage="@drawable/ic_loading_small_dots"
+                        app:roundAsCircle="true" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/user_profile_image_view"
+                        android:layout_width="@dimen/circle_image_width"
+                        android:layout_height="@dimen/circle_image_width"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="2dp"
+                        android:src="@drawable/place_holder_no_image"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/edit_photo_button"
+                    style="?borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_height_normal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_extra_small"
+                    android:text="@string/edit_photo"
+                    android:textAllCaps="false"
+                    android:textColor="@color/com_facebook_blue"
+                    android:textStyle="bold" />
+
+                <!--android:text="What's your gender ?"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:text="@string/gender"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <LinearLayout
+                    android:id="@+id/gender_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:paddingLeft="@dimen/padding_medium"
+                    android:paddingTop="@dimen/padding_small">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:src="@drawable/ic_gender_green" />
+
+                    <Spinner
+                        android:id="@+id/gender_spinner"
+                        style="@android:style/Widget.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height_normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <!--android:text="Your choice, your username !"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/Username"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/user_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:drawableLeft="@drawable/ic_user_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:hint="@string/email_or_phone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="40"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <!--android:text="Your first name is mandatory !"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/first_name"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/first_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_user_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:drawableRight="@drawable/ic_edit_grey_24dp"
+                    android:hint="@string/first_name"
+                    android:inputType="textCapWords"
+                    android:maxLength="20"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--android:text="Do you have any last name ?"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/last_name"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/last_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_user_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:drawableRight="@drawable/ic_edit_grey_24dp"
+                    android:hint="@string/last_name"
+                    android:inputType="textCapWords"
+                    android:maxLength="20"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--android:text="We know, you hate spams, so please calm !"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/EmailAdd"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_email_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:drawableRight="@drawable/ic_edit_grey_24dp"
+                    android:hint="@string/EmailAdd"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="40"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--android:text="Also, we don't disturb you !"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/m_no"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/user_mobile_number_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_mobile_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:drawableRight="@drawable/ic_edit_grey_24dp"
+                    android:hint="@string/your_mob_num"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--android:text="It's on you, another mobile number !"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/AlternateMobileNumber"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/alternate_mobile_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_mobile_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:drawableRight="@drawable/ic_edit_grey_24dp"
+                    android:hint="@string/alternate_mobile"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--android:text="Your happy birthday !"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/Dateofbirth"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <EditText
+                    android:id="@+id/dob_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_dob_green"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:drawableRight="@drawable/ic_edit_grey_24dp"
+                    android:hint="@string/dob"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="40"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textColorHint="@color/colorLightGrey"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/margin_medium"-->
+                <!--android:layout_marginTop="@dimen/margin_medium"-->
+                <!--android:text="Water Consumer Number"-->
+                <!--android:textColor="@color/colorGrey"-->
+                <!--android:textSize="@dimen/text_size_extra_small" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/et_water_consumer_number"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/ic_dob_green"-->
+                <!--android:drawablePadding="@dimen/padding_large"-->
+                <!--android:drawableRight="@drawable/ic_edit_grey_24dp"-->
+                <!--android:hint="@string/water_consumer_number"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="10"-->
+                <!--android:padding="@dimen/padding_medium"-->
+                <!--android:singleLine="true"-->
+                <!--android:textColor="@color/colorDarkGrey"-->
+                <!--android:textColorHint="@color/colorLightGrey"-->
+                <!--android:textSize="@dimen/text_size_medium" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/margin_medium"-->
+                <!--android:layout_marginTop="@dimen/margin_medium"-->
+                <!--android:text="Electricity Consumer Number"-->
+                <!--android:textColor="@color/colorGrey"-->
+                <!--android:textSize="@dimen/text_size_extra_small" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/et_electricity_consumer_no"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/ic_dob_green"-->
+                <!--android:drawablePadding="@dimen/padding_large"-->
+                <!--android:drawableRight="@drawable/ic_edit_grey_24dp"-->
+                <!--android:hint="@string/electricity_consumer_number"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="10"-->
+                <!--android:padding="@dimen/padding_medium"-->
+                <!--android:singleLine="true"-->
+                <!--android:textColor="@color/colorDarkGrey"-->
+                <!--android:textColorHint="@color/colorLightGrey"-->
+                <!--android:textSize="@dimen/text_size_medium" />-->
+
+                <com.citizen.fmc.utils.ButtonView
+                    android:id="@+id/update_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_normal"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/update"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold"
+                    app:buttonColor="@color/colorDarkBlue"
+                    app:cornerRadius="@dimen/corner_radius_small" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

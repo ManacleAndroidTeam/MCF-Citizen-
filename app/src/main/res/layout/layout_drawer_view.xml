@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/nav_header"
+        layout="@layout/layout_header_view" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            layout="@layout/layout_home_nav_bottom_custom_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:gravity="center"
+            android:paddingBottom="@dimen/margin_3"
+            android:paddingTop="@dimen/margin_3">
+
+            <TextView
+                android:id="@+id/copy_right_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/text_copyright"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/copy_right_text_view"
+                android:layout_marginTop="@dimen/margin_3">
+
+                <!--<ImageView-->
+                <!--android:id="@+id/logo"-->
+                <!--android:layout_width="130dp"-->
+                <!--android:layout_height="39dp"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:src="@drawable/manacle_logo" />-->
+
+                <LinearLayout
+                    android:id="@+id/info_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_company_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ripple_text_view_off_white"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/margin_2"
+                        android:paddingRight="@dimen/margin_2"
+                        android:text="@string/text_link_company_title"
+                        android:textColor="@color/colorBlueHeader"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_7"
+                        android:gravity="center"
+                        android:text="v "
+                        android:textColor="@color/colorGrey"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/version_name"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ListView
+        android:id="@+id/drawer_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/app_bar_layout"
+        android:layout_below="@id/nav_header"
+        android:groupIndicator="@null"/>
+</RelativeLayout>

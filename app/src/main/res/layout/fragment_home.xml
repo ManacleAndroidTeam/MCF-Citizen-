@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/data_layout_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/scroll_image_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:contentDescription="@string/banner_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_profile_image_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:progressBarAutoRotateInterval="1000"
+            app:progressBarImage="@drawable/ic_loading"
+            app:retryImage="@drawable/ic_loading"
+            app:roundAsCircle="true"
+            app:roundingBorderColor="@color/colorDarkGrey"
+            app:roundingBorderWidth="1dp"
+            android:visibility="gone"/>-->
+
+        <TextView
+            android:id="@+id/tv_temperature_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="30 C"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_ndmc_logo" />
+
+        <TextView
+            android:id="@+id/tv_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_temperature_text"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/text_size_small"
+            android:text="Clear"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_temperature_text" />
+
+        <TextView
+            android:id="@+id/tv_aqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/aqi_hint"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/tv_ndmc_logo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<TextView
+            android:id="@+id/tv_username_HomeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorDarkGrey"
+            android:visibility="gone"
+            android:layout_below="@+id/user_profile_image_view"
+            android:textSize="12sp"
+            android:textStyle="bold" />-->
+
+        <!--<TextView
+            android:id="@+id/tv_designation_HomeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorDarkGrey"
+            android:visibility="gone"
+            android:layout_below="@+id/tv_username_HomeActivity"
+            android:textSize="@dimen/text_size_medium" />-->
+
+        <TextView
+            android:id="@+id/tv_ndmc_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/dashboard_con"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_aqi"
+            app:layout_constraintTop_toTopOf="@+id/scroll_image_banner" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_image_sdv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/tv_ndmc_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            app:failureImage="@drawable/place_holder_no_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/scroll_image_banner"
+            app:progressBarAutoRotateInterval="1000"
+            app:progressBarImage="@drawable/ic_loading"
+            app:retryImage="@drawable/ic_loading"
+            app:roundAsCircle="true"
+            app:roundingBorderColor="@color/colorWhite"
+            app:roundingBorderWidth="1dp" />
+
+        <TextView
+            android:id="@+id/user_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_image_sdv"
+            android:gravity="center"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="normal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/scroll_image_banner"
+            app:layout_constraintTop_toBottomOf="@+id/user_image_sdv" />
+
+        <GridView
+            android:id="@+id/list_view_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/scroll_image_banner"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scroll_image_banner" />
+
+        <!--<TextView
+            android:id="@+id/msell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/complaints_fab_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/margin_normal"
+        app:srcCompat="@drawable/ic_add"
+        app:backgroundTint="@color/colorGooglePlus"
+        app:borderWidth="0dp"
+        app:elevation="@dimen/elevation_small"
+        app:fabSize="mini"
+        app:pressedTranslationZ="@dimen/elevation_medium"
+        app:rippleColor="@color/colorDarkBlue"
+        app:useCompatPadding="true" />
+</FrameLayout>

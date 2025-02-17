@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary2">#3F51B5</color>
+    <color name="colorPrimary">#4b88fc</color>
+    <color name="blueColorBg">#0171be</color>
+    <color name="colorAccent">#326196</color>
+    <color name="colorAccent2">#FF4081</color>
+    <color name="gold">#FFD700</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorLightWhite">#f7efef</color>
+    <color name="colorYellow">#FFFF00</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreen">#008000</color>
+    <color name="colorDarkBlue">#3F51B5</color>
+    <color name="black">#000000</color>
+    <color name="colorSaffron">#e57200</color>
+    <color name="colorBrightGreen">#FF00FF00</color>
+    <color name="colorGrey">#808080</color>
+    <color name="colorDarkGrey">#666666</color>
+    <color name="colorWaterBlue">#74ccf4</color>
+    <color name="colorTransparentBlack">#9e000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDarkGreen">#125A2D</color>
+    <color name="colorLightGreen">#1D9455</color>
+    <color name="colorBackground">#cccccc</color>
+    <color name="colorLightGrey">#BDBDBD</color>
+    <!--Starting of Animated Button View-->
+    <color name="fbutton_default_color">@color/colorDarkBlue</color>
+    <color name="fbutton_default_shadow_color">@color/colorLightBlue</color>
+    <color name="colorGooglePlus">#DD4B39</color>
+    <color name="colorFacebook">#3B5998</color>
+    <color name="colorLightBlue">#2897AC</color>
+    <color name="colorBlue">#3498db</color>
+    <color name="colorBlueHeader">#0064FF</color>
+    <color name="colorNew">#3B4655</color>
+    <color name="color_green_ndmc">#3A784D</color>
+    <color name="color_civilian_green">#808080</color>
+    <color name="color_grid_background_green">#009b4b</color>
+    <color name="home_header_color">#807F80</color>
+    <color name="navy_blue">#06038D</color>
+    <color name="saffron">#FF671F</color>
+    <color name="green">#046A38</color>
+    <!--End of Animated Button View-->
+</resources>

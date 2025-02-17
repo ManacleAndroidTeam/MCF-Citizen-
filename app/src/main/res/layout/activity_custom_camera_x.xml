@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.cameraview.CameraView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:adjustViewBounds="true"
+        android:background="#7F000000"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/custom_image_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/previewView"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/capture_camera2"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/blueColorBg"
+        android:layout_marginBottom="20dp"
+        android:importantForAccessibility="no" />
+
+    <ImageButton
+        android:id="@+id/custom_flip_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@+id/previewView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_7"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/blueColorBg"
+        android:background="@drawable/flip_camera2"
+        android:importantForAccessibility="no" />
+
+</RelativeLayout>
+
+
+
+

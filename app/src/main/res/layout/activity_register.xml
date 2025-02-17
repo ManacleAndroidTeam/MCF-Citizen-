@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include layout="@layout/layout_frame_with_image_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_view_logo"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitCenter"
+                android:src="@drawable/municipal_corporation_faridabad_logo_256x256" />
+
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_view_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/circle_gray_border">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_add_user"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    app:civ_border_width="0.1dp" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/first_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_layout"
+                android:layout_marginTop="@dimen/margin_small"
+                android:hint="@string/first_name"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_medium" />
+
+            <EditText
+                android:id="@+id/last_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_name_edit_text"
+                android:layout_marginTop="@dimen/margin_small"
+                android:hint="@string/last_name"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_medium" />
+
+            <EditText
+                android:id="@+id/user_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/last_name_edit_text"
+                android:layout_marginTop="@dimen/margin_small"
+                android:hint="@string/email_or_phone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_medium" />
+
+            <EditText
+                android:id="@+id/new_password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/user_name_edit_text"
+                android:layout_marginTop="@dimen/margin_small"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_medium" />
+
+            <EditText
+                android:id="@+id/confirm_new_password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/new_password_edit_text"
+                android:layout_marginTop="@dimen/margin_small"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_medium" />
+
+            <LinearLayout
+                android:id="@+id/gender_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/confirm_new_password_edit_text"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_small">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/gender"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gender_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/cb_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/female" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/male" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <com.citizen.fmc.utils.ButtonView
+                android:id="@+id/register_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_normal"
+                android:layout_below="@id/gender_layout"
+                android:text="@string/register"
+                android:textColor="@color/colorWhite"
+                app:buttonColor="@color/colorDarkBlue"
+                app:cornerRadius="@dimen/corner_radius_small" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

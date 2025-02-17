@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorDarkBlue"
+        android:layout_height="100dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_from_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/from_hint"
+                android:layout_marginTop="@dimen/margin_10"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"/>
+
+            <fragment
+                android:id="@+id/place_autocomplete_from"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_toRightOf="@+id/tv_from_text"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment" />
+
+            <TextView
+                android:id="@+id/tv_to_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/to_hint"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/tv_from_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"/>
+
+            <fragment
+                android:id="@+id/place_autocomplete_to"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tv_from_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:layout_toRightOf="@+id/tv_to_text"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment" />
+
+            <ImageView
+                android:id="@+id/iv_bidirectional_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_transfer"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/margin_20"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

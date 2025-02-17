@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fillViewport="true"
+        android:focusableInTouchMode="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/margin_5"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/corner_radius_small"
+                app:cardElevation="@dimen/elevation_small"
+                app:cardUseCompatPadding="true">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/re_complaint_simple_drawee_v"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:failureImage="@drawable/place_holder_no_image"
+                    app:progressBarAutoRotateInterval="1000"
+                    app:progressBarImage="@drawable/ic_loading"
+                    app:retryImage="@drawable/ic_loading" />
+
+                <RelativeLayout
+                    android:id="@+id/complaint_image_view_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/re_complaint_image_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/re_capture_text_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:hint="@string/image_capture_text"
+                        android:visibility="visible" />
+
+                    <ImageButton
+                        android:id="@+id/re_capture_image_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/ic_add_a_photo_24dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/complaint_remark"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/text_size_extra_small" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/corner_radius_small"
+                app:cardElevation="@dimen/elevation_small"
+                app:cardUseCompatPadding="true">
+
+                <EditText
+                    android:id="@+id/re_complaint_descript_edit_t"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/three_hundred_letters_text"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="300"
+                    android:padding="@dimen/padding_medium"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="@dimen/text_size_small" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:focusableInTouchMode="true"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/corner_radius_small"
+                app:cardElevation="@dimen/elevation_small"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/geo_address_text_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="@string/geo_address_text"
+                        android:paddingLeft="@dimen/padding_medium"
+                        android:paddingTop="@dimen/padding_small"
+                        android:visibility="gone"
+                        android:paddingRight="@dimen/padding_medium"
+                        android:paddingBottom="@dimen/padding_small"
+                        android:textColor="@color/colorDarkGrey"
+                        android:textSize="@dimen/text_size_extra_small" />
+                    <RelativeLayout
+                        android:id="@+id/map_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_below="@id/geo_address_text_v">
+
+                        <fragment
+                            android:id="@+id/map_fragment"
+                            class="com.google.android.gms.maps.MapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/transparent_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@android:color/transparent" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.citizen.fmc.utils.ButtonView
+                android:id="@+id/re_submit_complaint_b"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_normal"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                app:buttonColor="@color/colorDarkBlue"
+                app:cornerRadius="@dimen/corner_radius_small" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

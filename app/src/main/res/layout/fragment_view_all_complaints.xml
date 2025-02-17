@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_frame_with_image_view" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_normal"
+            app:cardBackgroundColor="@color/colorTransparentBlack"
+            app:cardCornerRadius="0dp"
+            android:visibility="visible"
+            app:cardElevation="@dimen/elevation_small"
+            app:cardUseCompatPadding="false">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:theme="@style/SearchViewTheme"
+                app:closeIcon="@drawable/ic_clear_24dp"
+                app:defaultQueryHint="@string/search"
+                app:iconifiedByDefault="true"
+                app:queryBackground="@null"
+                app:queryHint="@string/search"
+                app:searchHintIcon="@drawable/ic_search_24dp"
+                app:searchIcon="@drawable/ic_search_24dp" />
+        </androidx.cardview.widget.CardView>
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/swipe_refresh_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/search_card_view"-->
+        <!--android:visibility="gone">-->
+
+        <!--&lt;!&ndash;<ListView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/complaints_list_view"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:scrollbars="none" />&ndash;&gt;-->
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_recycler_complaint"
+            android:layout_below="@+id/search_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:scrollbars="none" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:indeterminateTint="@color/colorGreen"
+            android:indeterminateTintMode="src_atop"
+            tools:targetApi="lollipop" />
+
+        <include
+            layout="@layout/layout_complaints_search_tab"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/complaints_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/margin_medium"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorLightBlue"
+        app:borderWidth="0dp"
+        app:elevation="@dimen/elevation_small"
+        app:fabSize="normal"
+        app:pressedTranslationZ="@dimen/elevation_medium"
+        app:rippleColor="@color/colorDarkBlue"
+        app:srcCompat="@drawable/ic_add"
+        app:useCompatPadding="true" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

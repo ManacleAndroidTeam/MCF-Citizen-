@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/search_map_parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@color/colorGrey"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:background="@null"
+            android:focusableInTouchMode="true"
+            android:theme="@style/SearchViewTheme"
+            app:closeIcon="@drawable/ic_clear_24dp"
+            android:layout_marginEnd="@dimen/margin_5"
+            app:defaultQueryHint="@string/search"
+            app:iconifiedByDefault="true"
+            app:queryBackground="@null"
+            app:queryHint="@string/search"
+            app:searchHintIcon="@drawable/ic_search_24dp"
+            app:searchIcon="@drawable/ic_search_24dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite" />
+
+        <ImageView
+            android:id="@+id/map_icon"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/ic_map_pin"
+            android:layout_weight="0.2"
+            android:contentDescription="@string/map_marker_name"/>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_map_parent_view"
+        android:divider="#000000"
+        android:scrollbars="none" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="@color/colorGreen"
+        android:indeterminateTintMode="src_atop"
+        tools:targetApi="lollipop" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_below="@+id/search_map_parent_view"
+        android:layout_height="match_parent">
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>
+
+

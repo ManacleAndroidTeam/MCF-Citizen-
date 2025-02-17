@@ -1,0 +1,269 @@
+<resources>
+    <!--TODO: Modules Name String-->
+    <string name="Home">होम</string>
+    <string name="Profile">प्रोफ़ाइल</string>
+    <string name="FrequentlyAskedQues">अक्सर पूछे जाने वाले प्रश्न</string>
+    <string name="Feedback">प्रतिक्रिया</string>
+    <string name="RateUs">हमें रेटिंग दें</string>
+    <string name="Logout">लॉग आउट</string>
+    <string name="ChangeLanguage">भाषा बदलें</string>
+    <string name="please_wait_dialog_text"><i>कृपया प्रतीक्षा करें…</i></string>
+    <string name="Hindi" translatable="false">हिन्दी</string>
+    <string name="English" translatable="false">अंग्रेज़ी</string>
+    <string name="Ndmc" translatable="false">एमसीएफ</string>
+    <string name="Connect_with_ndmc" translatable="false">एमसीएफ से जुड़ें</string>
+    <string name="smart_meter" translatable="false">स्मार्ट मीटर</string>
+    <string name="quick_pay" translatable="false">शीघ्र भुगतान</string>
+    <string name="complaints" translatable="false">शिकायते</string>
+    <string name="air_pollution" translatable="false">वायु प्रदूषण</string>
+    <string name="helpline" translatable="false">हेल्पलाइन 24*7</string>
+    <string name="startups" translatable="false">स्टार्टअप</string>
+    <string name="swimming_pool" translatable="false">स्विमिंग पूल पंजीकरण</string>
+    <string name="who_serves_you" translatable="false">हु सर्वस यू </string>
+    <string name="what_near_me" translatable="false">व्हाट्स नियर मी </string>
+    <string name="traffic_and_parking" translatable="false">यातायात और पार्किंग</string>
+    <string name="all_citizen_services" translatable="false">सभी नागरिक सेवाएं</string>
+    <string name="door_to_door_collection" translatable="false">डोर टू डोर कलेक्शन</string>
+    <string name="tree_in_ndmc" translatable="false">ट्री इन एमसीएफ</string>
+    <string name="sports_coaching" translatable="false">खेल प्रशिक्षण</string>
+    <string name="employee_corner" translatable="false">कर्मचारी कॉर्नर</string>
+    <string name="garbage_vehicle_tracking" translatable="false">कचरा वाहन ट्रैकिंग</string>
+
+    <string name="ptu_dashboard" translatable="false">पीटीयू डैशबोर्ड</string>
+    <string name="smart_bike" translatable="false">स्मार्ट बाइक</string>
+    <string name="opd_registration" translatable="false">ओपीडी पंजीकरण</string>
+    <string name="daily_treated_water_test" translatable="false">दैनिक उपचारित जल परीक्षण</string>
+    <string name="monitor_water_quality" translatable="false">पानी की गुणवत्ता की निगरानी करें</string>
+    <string name="important_information" translatable="false">महत्वपूर्ण जानकारी</string>
+    <string name="e_waste" translatable="false">ई-कचरा</string>
+    <string name="pensioner_portal" translatable="false">पेंशनभोगी पोर्टल</string>
+    <string name="e_hospital" translatable="false">ई_अस्पताल</string>
+    <string name="select_a_cat" translatable="false">एक श्रेणी चुनें</string>
+    <string name="cancel" translatable="false">रद्द करें</string>
+    <!--TODO: Sub Modules Name String-->
+    <string name="about_ndmc" translatable="false">एमसीएफ के बारे में</string>
+    <string name="directory" translatable="false">डायरेक्टरी</string>
+    <string name="ndmc_history" translatable="false">एमसीएफ इतिहास</string>
+    <string name="website" translatable="false">वेबसाइट</string>
+    <string name="what_in_the_news_today" translatable="false">आज की खबरों में क्या है</string>
+    <string name="facebook" translatable="false">फेसबुक</string>
+    <string name="ndmc_toll_free_number" translatable="false">एमसीएफ टोल फ्री नंबर</string>
+    <string name="twitter" translatable="false">ट्विटर</string>
+    <string name="write_feedback" translatable="false">प्रतिक्रिया लिखें</string>
+    <string name="department" translatable="false">विभाग</string>
+    <string name="EmailAdd" translatable="false">ईमेल पता</string>
+    <string name="m_no" translatable="false">मोबाइल नंबर</string>
+    <string name="write_feedback1" translatable="false">प्रतिक्रिया लिखें (*)</string>
+    <string name="your_mob_num"><i>आपका मोबाइल नंबर</i></string>
+    <string name="three_hundred_letters_text"><i>आपके पास 300 अक्षर हैं</i></string>
+    <string name="submit">जमा</string>
+    <string name="water_bill" translatable="false">पानी का बिल</string>
+    <string name="electricity_bill" translatable="false">बिजली का बिल</string>
+    <string name="estate_bill" translatable="false">इस्टेट बिल (संपत्ति विधेयक)</string>
+    <string name="property_tax_bill" translatable="false">प्रॉपर्टी टैक्स बिल (संपत्ति कर विधेयक)</string>
+
+    <!--TODO: Complaints Sub Modules Name-->
+    <string name="create_new_complaint" translatable="false">नई शिकायत बनाएं</string>
+    <string name="my_complaints" translatable="false">मेरी शिकायतें</string>
+    <string name="view_all_complaints" translatable="false">सभी शिकायतें देखें</string>
+    <string name="ndmc_toll_free_number1" translatable="false">एमसीएफ टोल फ्री नंबर</string>
+
+
+    <!--TODO: HELPLINE NO Sub Modules-->
+    <string name="aiims_hospital_central_enquiry" translatable="false">एम्स अस्पताल (केंद्रीय पूछताछ)</string>
+    <string name="ambulance_service_control_room" translatable="false">एम्बुलेंस सेवा (नियंत्रण कक्ष)</string>
+    <string name="cph_hospital" translatable="false">सीपीएच अस्पताल (एनडीएमसी)</string>
+    <string name="delhi_police_control_room" translatable="false">दिल्ली पुलिस (नियंत्रण कक्ष)</string>
+    <string name="delhi_police_senior_citizen" translatable="false">दिल्ली पुलिस (वरिष्ठ नागरिक प्रकोष्ठ)</string>
+    <string name="delhi_police_traffic_unit" translatable="false">दिल्ली पुलिस (यातायात इकाई)</string>
+    <string name="delhi_police_women_in_distress" translatable="false">दिल्ली पुलिस (संकट में महिलाएं)</string>
+    <string name="disaster_helpline" translatable="false">आपदा हेल्पलाइन</string>
+    <string name="fire_service" translatable="false">अग्निशमन सेवा (नियंत्रण कक्ष)</string>
+    <string name="lhmc_ksc_hospital" translatable="false">एलएचएमसी केएससी अस्पताल (पीबीएक्स नंबर)</string>
+    <string name="lhmc_sks_hospital" translatable="false">एलएचएमसी एसएसके अस्पताल (पीबीएक्स नंबर)</string>
+    <string name="ndmc_control_room" translatable="false">एमसीएफ (नियंत्रण कक्ष)</string>
+    <string name="rml_hospital" translatable="false">आरएमएल अस्पताल (ईपीबीएक्स नंबर)</string>
+
+    <string name="rml_hospital_address" translatable="false">डॉ. राम मनोहर लोहिया अस्पताल, नई दिल्ली</string>
+    <string name="ndmc_control_room_address" translatable="false">नई दिल्ली नगरपालिका परिषद, नई दिल्ली</string>
+    <string name="lhmc_sks_hospital_address" translatable="false">लेडी हार्डिंग मेडिकल कॉलेज और एसोसिएटेड श्रीमती। सुचेता कृपलानी अस्पताल, नई दिल्ली</string>
+    <string name="lhmc_ksc_hospital_address" translatable="false">लेडी हार्डिंग मेडिकल कॉलेज और एसोसिएटेड कलावती सरन चिल्ड्रेन हॉस्पिटल, नई दिल्ली</string>
+    <string name="disaster_helpline_address" translatable="false">दिल्ली आपदा प्रबंधन प्राधिकरण (डीडीएमए)</string>
+    <string name="cph_hospital_address" translatable="false">चरक पालिका अस्पताल, नई दिल्ली</string>
+    <string name="ambulance_service_control_room_address" translatable="false">केंद्रीकृत दुर्घटना और आघात सेवाएं (CATS)</string>
+    <string name="aiims_hospital_address" translatable="false">अखिल भारतीय आयुर्विज्ञान संस्थान, नई दिल्ली</string>
+
+
+    <!--TODO: Traffic and Parking Sub Modules-->
+    <string name="traffic" translatable="false">यातायात</string>
+    <string name="smart_parking_summary" translatable="false">स्मार्ट पार्किंग सारांश</string>
+    <string name="ndmc_smart_parking" translatable="false">एमसीएफ स्मार्ट पार्किंग</string>
+
+    <!--TODO: All Citizen Services Sub Modules-->
+    <string name="baratghar" translatable="false">बारातघर</string>
+    <string name="birth_certificate" translatable="false">जन्म प्रमाणपत्र</string>
+    <string name="building_approval" translatable="false">भवन योजना अनुमोदन</string>
+    <string name="child_name_inclusion" translatable="false">बच्चे का नाम शामिल करना</string>
+    <string name="death_certificate" translatable="false">मृत्यु प्रमाणपत्र</string>
+    <string name="online_health_license" translatable="false">ऑनलाइन स्वास्थ्य लाइसेंस</string>
+    <string name="still_birth_certificate" translatable="false">स्टिल बर्थ सर्टिफिकेट</string>
+    <string name="yellow_fever_vaccination" translatable="false">पीला बुखार टीकाकरण</string>
+
+    <!--TODO: Employee Corner Sub Modules-->
+    <string name="employee_corner_attendance_dashboard" translatable="false">उपस्थिति डैशबोर्ड</string>
+
+    <!--TODO: Important Information Sub Modules-->
+    <string name="budget_2018_19" translatable="false">बजट 2018-19</string>
+    <string name="clean_ndmc" translatable="false">स्वच्छ एफएमसी</string>
+    <string name="cyber_security" translatable="false">साइबर सुरक्षा</string>
+    <string name="e_courts" translatable="false">ई-कोर्ट</string>
+    <string name="faqs" translatable="false">पूछे जाने वाले प्रश्न</string>
+    <string name="fight_dengue_chikungunya" translatable="false">डेंगू / चिकनगुनिया से लड़ें</string>
+    <string name="ndmc_walk" translatable="false">एफएमसी वॉक</string>
+    <string name="pm_relief_fund" translatable="false">प्रधानमंत्री राहत कोष</string>
+    <string name="rain_water_harvesting" translatable="false">बारिश के पानी का संग्रहण</string>
+    <string name="view_medical_stock" translatable="false">मेडिकल स्टॉक देखें</string>
+    <string name="virtual_tour_smart_toilets" translatable="false">वर्चुअल टूर स्मार्ट शौचालय</string>
+
+    <!--TODO: Whats's Near Me Sub Modules-->
+    <string name="whats_near_me_id_atms" translatable="false">एटीएम</string>
+    <string name="what_near_me_baratghars" translatable="false">बारातघर</string>
+    <string name="whats_near_me_bus_stands_dtc" translatable="false">बस स्टैंड (डीटीसी)</string>
+    <string name="whats_near_me_business_directory" translatable="false">व्यवसाय निर्देशिका</string>
+    <string name="whats_near_me_citizen_faciliation_centers_ndmc" translatable="false">नागरिक सुविधा केंद्र (एफएमसी)</string>
+    <string name="whats_near_me_clinic_dispensaries" translatable="false">क्लीनिक / औषधालय</string>
+    <string name="whats_near_me_community_centers" translatable="false">सामुदायिक केंद्र</string>
+    <string name="whats_near_me_construction_and_demolition_waste_bins" translatable="false">निर्माण और विध्वंस अपशिष्ट (मालबा) डिब्बे</string>
+    <string name="whats_near_me_emabssies_high_commissions" translatable="false">दूतावास / उच्चायोग</string>
+
+    <string name="whats_near_me_hospitals" translatable="false">अस्पताल</string>
+    <string name="tree_near_by_me" translatable="false">ट्री नियर बाई मी</string>
+    <string name="qr_near_by_me" translatable="false">QR नियर बाई मी</string>
+    <string name="whats_near_me_litter_bins" translatable="false">कचरे के डिब्बे</string>
+    <string name="whats_near_me_markets" translatable="false">बाजार</string>
+    <string name="whats_near_me_metro_stations" translatable="false">मेट्रो स्टेशन</string>
+    <string name="whats_near_me_monuments" translatable="false">स्मारकों</string>
+    <string name="whats_near_me_ndmc_gyms" translatable="false">एफएमसी जिम</string>
+    <string name="whats_near_me_ndmc_open_gyms_in_park" translatable="false">एफएमसी ओपन जिम (पार्कों में)</string>
+    <string name="whats_near_me_ndmc_swimming" translatable="false">एफएमसी स्विमिंग पूल</string>
+    <string name="whats_near_me_pharmacies" translatable="false">फार्मेसी</string>
+    <string name="whats_near_me_physiotherapy_centers" translatable="false">भौतिक चिकित्सा केंद्र</string>
+    <string name="whats_near_me_police_stations" translatable="false">पुलिस थाने</string>
+    <string name="whats_near_me_postal_codes" translatable="false">डाक कोड</string>
+    <string name="whats_near_me_public_toilets" translatable="false">सार्वजनिक शौचालय</string>
+    <string name="whats_near_me_schools" translatable="false">स्कूलों</string>
+    <string name="whats_near_me_speed_limits" translatable="false">रफ्तार का प्रतिबंध</string>
+    <string name="whats_near_me_stadiums" translatable="false">स्टेडियमों</string>
+    <string name="whats_near_me_water_atms" translatable="false">वाटर एटीएम</string>
+    <string name="whats_near_me_trolley_data" translatable="false">ट्रॉली डेटा</string>
+    <string name="whats_near_me_twin_bins" translatable="false">जुड़वां डिब्बे</string>
+    <string name="whats_near_me_veterinary_clients" translatable="false">पशु चिकित्सा क्लिनिक</string>
+
+    <string name="text_all_fields_mandatory"><u>अनिवार्य क्षेत्र*</u></string>
+    <string name="Information">जानकारी</string>
+    <string name="not_in_ndmc_area" translatable="false">एफएमसी क्षेत्र में नहीं !</string>
+    <string name="you_are_out_of_ndmc" translatable="false">आप एफएमसी क्षेत्र से बाहर हैं। कृपया एफएमसी क्षेत्र से अपनी शिकायत दर्ज करें।</string>
+    <string name="ok">ओके</string>
+    <string name="comp_image">कंप्लेंट इमेज</string>
+    <string name="image_capture_text"><i><b>कैप्चर </b> एक छवि\nया\nइससे एक छवि चुनें <b>गेलरी</b></i></string>
+    <string name="select_category_text"><i>श्रेणी का चयन करने के लिए यहां क्लिक करें</i></string>
+    <string name="complaint_description">शिकायत विवरण</string>
+    <string name="complaint_address">शिकायत का पता</string>
+    <string name="two_hundred_letters_text"><i>200 से अधिक अक्षर नहीं!</i></string>
+    <string name="geo_info_text">भौगोलिक स्थान डेटा</string>
+    <string name="geo_address_text"><i>आपका भौगोलिक पता</i></string>
+    <string name="no_results_found">कोई परिणाम नहीं मिला !!!</string>
+    <string name="complaint_status" translatable="false">शिकायत की स्थिति</string>
+    <string name="Vote">वोट</string>
+    <string name="reopne">री-ओपन</string>
+    <string name="from_hint">फ्रॉम</string>
+    <string name="to_hint">टू</string>
+    <string name="complaint_duration">शिकायत अवधि</string>
+    <string name="complaint">शिकायत</string>
+    <string name="start" translatable="false">शुरू</string>
+    <string name="notification_title">शीर्षक</string>
+    <string name="notification_date_time">दिनांक और समय</string>
+    <string name="welcome" translatable="false">स्वागत</string>
+    <string name="filter_by" translatable="false">फिल्टर के द्वारा</string>
+    <string name="text_copyright">कॉपीराइट © 2018, सर्वाधिकार सुरक्षित</string>
+    <string name="text_link_company_title">मैनकल टेक्नोलॉजीज प्राइवेट लिमिटेड</string>
+    <string name="mobile_no" translatable="false">मोबाइल नंबर।</string>
+    <string name="change_pwd" translatable="false">पासवर्ड बदलें</string>
+    <string name="old_password">पुराना पासवर्ड</string>
+    <string name="new_password"><i>नया पासवर्ड बनाएं</i></string>
+    <string name="re_enter_password">नया पासवर्ड पुनः दर्ज करें</string>
+    <string name="confirm">पुष्टि करना</string>
+    <string name="add_comment"><i>अपनी टिप्पणी जोडेे</i></string>
+    <string name="scan_qr" translatable="false">स्कैन क्यूआर</string>
+    <string name="qr_code" translatable="false">क्यूआर कोड</string>
+    <string name="Segragate" translatable="false">अलग</string>
+    <string name="NonSegragate" translatable="false">गैर अलग</string>
+    <string name="first_name"><i>पहला नाम</i></string>
+    <string name="last_name"><i>अंतिम नाम</i></string>
+    <string name="update_your_profile"><i>अपनी प्रोफ़ाइल अद्यतित करें</i></string>
+    <string name="email_or_phone"><i>उपयोगकर्ता नाम (ई-मेल या मोबाइल नंबर)</i></string>
+    <string name="confirm_password"><i>नए पासवर्ड की पुष्टि करें</i></string>
+    <string name="gender">लिंग</string>
+    <string name="female">महिला</string>
+    <string name="male">पुरुष</string>
+    <string name="update">अपडेट</string>
+    <string name="feedback_image"> फीडबैक इमेज</string>
+    <string name="locked">बंद</string>
+    <string name="please_scan_qr_code">कृपया नीचे क्यूआर कोड स्कैन करें</string>
+    <string name="or">या</string>
+    <string name="please_type_ndn_code">कृपया नीचे NDDN कोड टाइप करें</string>
+    <string name="type_ndn_code">NDDN कोड टाइप करें</string>
+    <string name="clean_bin">साफ बिन</string>
+    <string name="GoodBehaviour">अच्छा व्यवहार</string>
+    <string name="SatisfactionRating">संतुष्टि रेटिंग</string>
+    <string name="SegregateBinNotused">अलग बिन इस्तेमाल नहीं किया गया</string>
+    <string name="BadBehaviour">बुरा बर्ताव</string>
+    <string name="Selectanyone">किसी एक का चयन करें</string>
+    <string name="user_not_exist">उपयोगकर्ता मौजूद नहीं है या नहीं \nसक्रिय !!!</string>
+    <string name="GiveYourFeedback">अपनी प्रतिक्रिया दें</string>
+    <string name="NotSupportive">सहायक नहीं</string>
+    <string name="edit_photo">फ़ोटो संपादित करें</string>
+    <string name="Username">उपयोगकर्ता नाम</string>
+    <string name="AlternateMobileNumber">वैकल्पिक मोबाइल नंबर</string>
+    <string name="Dateofbirth">जन्म की तारीख</string>
+    <string name="Whatsyourgender">आपका लिंग क्या है?</string>
+    <string name="yourchoiceyourusername">आपकी पसंद, आपका उपयोगकर्ता नाम!</string>
+    <string name="yourfirstnameismendatory">आपका पहला नाम अनिवार्य है!</string>
+    <string name="doyouhaveanylastname">क्या आपका कोई उपनाम है?</string>
+    <string name="weknowyourhatespams">हम जानते हैं, आप स्पैम से नफरत करते हैं, इसलिए कृपया शांत रहें!</string>
+    <string name="alsowedontdisturbyou">इसके अलावा, हम आपको परेशान नहीं करते हैं!</string>
+    <string name="itsonyouanothermobileno">यह आप पर है, एक और मोबाइल नंबर!</string>
+    <string name="Yourhappybirthday">आपका जन्मदिन मुबारक हो!</string>
+    <string name="where_you_want">आप ओटीपी कहां चाहते हैं?</string>
+    <string name="otp_con">यदि आप एसएमएस के माध्यम से ओटीपी चाहते हैं, तो एसएमएस या ईमेल के माध्यम से चुनें, फिर ईमेल चुनें
+    और तदनुसार फ़ील्ड दर्ज करें।</string>
+    <string name="viasms">एसएमएस के माध्यम से</string>
+    <string name="viaemail">ईमेल के माध्यम से</string>
+    <string name="next">अगला</string>
+    <string name="otp">ओटीपी</string>
+    <string name="otp_content">कृपया आपके मोबाइल या ईमेल पर भेजा गया सत्यापन कोड टाइप करें।</string>
+    <string name="resend_code_con">पुन: कोड भेजे</string>
+    <string name="con">जारी रखना</string>
+    <string name="loginorregister">भाग लें या पंजीकरण करें</string>
+    <string name="password"><i>पासवर्ड</i></string>
+    <string name="forgot_pwd">पासवर्ड भूल गए?</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="register_now">अभी पंजीकरण करें</string>
+    <string name="connect_via">या के माध्यम से कनेक्ट करें</string>
+    <string name="login_facebook_text">फेसबुक</string>
+    <string name="login_google_text">गूगल</string>
+    <string name="fdp_content">अपना खाता पासवर्ड रीसेट करने के लिए, उपयोगकर्ता नाम दर्ज करें और फिर क्लिक करें
+    अगली प्रक्रिया के लिए।</string>
+    <string name="change_password">पासवर्ड सफलतापूर्वक बदलें!</string>
+    <string name="nav_logout" translatable="false">लॉग आउट</string>
+    <string name="info_text_logout" translatable="false">क्या आप वाकई लॉगआउट करना चाहते हैं?</string>
+    <string name="not_now" translatable="false">अभी नहीं</string>
+    <string name="yes" translatable="false">हां</string>
+    <string name="loading_web_page" translatable="false">"वेब पेज लोड हो रहा है..."</string>
+    <string name="dashboard_con" translatable="false">नई दिल्ली नगर परिषद</string>
+    <string name="aqi_hint" translatable="false">40 एक्यूआई</string>
+    <string name="aqi" translatable="false">एक्यूआई</string>
+    <string name="app_name" translatable="false">एनडीएमसी 311</string>
+    <string name="please_check_your_internet_connection" translatable="false">अपने इंटरनेट कनेक्शन की जाँच करें और पुन: प्रयास करें !</string>
+    <string name="refresh" translatable="false">पुनश्चर्याा</string>
+</resources>

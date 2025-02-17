@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_effect">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding_extra_small"
+        android:paddingLeft="@dimen/padding_small"
+        android:paddingRight="@dimen/padding_small"
+        android:paddingTop="@dimen/padding_small">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/module_sdv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            app:failureImage="@drawable/place_holder_no_image"
+            app:progressBarAutoRotateInterval="1000"
+            app:progressBarImage="@drawable/ic_loading"
+            app:retryImage="@drawable/ic_loading"
+            app:roundAsCircle="true"
+            app:roundingBorderColor="@color/colorLightGrey"
+            app:roundingBorderWidth="0.1dip" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_toEndOf="@+id/module_sdv"
+            android:layout_toRightOf="@+id/module_sdv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/module_title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/padding_medium"
+                android:drawableRight="@drawable/ic_call_24dp"
+                android:textColor="@color/colorDarkBlue"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/designation_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/email_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_extra_small" />
+
+            <TextView
+                android:id="@+id/mobile_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_extra_small" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

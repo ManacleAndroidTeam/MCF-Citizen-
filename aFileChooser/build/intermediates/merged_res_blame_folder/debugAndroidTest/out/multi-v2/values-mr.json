@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ipaulpro.afilechooser.test.aFileChooser-mergeDebugAndroidTestResources-4:/values-mr/values-mr.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\JYOTI PANDEY\\.gradle\\caches\\8.12\\transforms\\fb3da8c8c8047450879bf86fc039bc31\\transformed\\core-1.0.0\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

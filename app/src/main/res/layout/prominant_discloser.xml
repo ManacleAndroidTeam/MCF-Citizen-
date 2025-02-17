@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:padding="@dimen/margin_10"
+    android:layout_margin="@dimen/margin_10"
+    android:background="@color/colorWhite"
+    android:backgroundTint="@color/colorWhite"
+
+    android:layout_height="wrap_content">
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/wertyu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@drawable/ic_cancel" />
+
+
+
+
+        <ImageView
+            android:id="@+id/imggg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_gravity="center"
+            android:src="@drawable/location_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imggg"
+            android:padding="@dimen/margin_10"
+            android:id="@+id/content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="0dp"
+            android:textSize="20sp"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:text=""
+            android:textColor="@color/colorBlack" />
+    </LinearLayout>
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

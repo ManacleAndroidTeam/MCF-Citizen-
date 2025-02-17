@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_frame_with_image_view" />
+
+    <RelativeLayout
+        android:id="@+id/layout_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_login" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.4"
+                android:background="@drawable/splash_gradient" />
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/municipal_corporation_faridabad_logo_256x256" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_banner"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/padding_extra_large"
+        android:paddingRight="@dimen/padding_extra_large"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_extra_large">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_small"
+                    android:text="register here"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:gravity="right"
+                    android:visibility="gone"
+                    android:text="@string/text_all_fields_mandatory"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/text_size_extra_small" />
+
+                <RelativeLayout
+                    android:id="@+id/image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_extra_small"
+                    android:background="@drawable/round_corner_filled_green_background"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/user_profile_image_view"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_margin="2dp" />
+
+                    <ImageView
+                        android:id="@+id/place_holder_image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_add_user" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/first_name_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_corner_filled_green_background"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:drawableLeft="@drawable/ic_user_white"
+                        android:drawablePadding="@dimen/padding_large"
+                        android:hint="@string/first_name"
+                        android:inputType="textCapWords"
+                        android:maxLength="20"
+                        android:padding="@dimen/padding_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/colorWhite"
+                        android:textColorHint="@color/colorLightWhite"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <EditText
+                        android:id="@+id/last_name_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_corner_filled_green_background"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:drawableLeft="@drawable/ic_user_white"
+                        android:drawablePadding="@dimen/padding_large"
+                        android:hint="@string/last_name"
+                        android:inputType="textCapWords"
+                        android:maxLength="20"
+                        android:padding="@dimen/padding_medium"
+                        android:singleLine="true"
+                        android:textColor="@color/colorWhite"
+                        android:textColorHint="@color/colorLightWhite"
+                        android:textSize="@dimen/text_size_medium" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/user_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:background="@drawable/round_corner_filled_green_background"
+                    android:drawableLeft="@drawable/ic_email_white"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:hint="@string/email_or_phone"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="40"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorLightWhite"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <EditText
+                    android:id="@+id/new_password_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:background="@drawable/round_corner_filled_green_background"
+                    android:drawableLeft="@drawable/ic_password_white"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:hint="@string/new_password"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorLightWhite"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <EditText
+                    android:id="@+id/confirm_new_password_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:background="@drawable/round_corner_filled_green_background"
+                    android:drawableLeft="@drawable/ic_password_white"
+                    android:drawablePadding="@dimen/padding_large"
+                    android:hint="@string/confirm_password"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/padding_medium"
+                    android:singleLine="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorLightWhite"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!--<EditText-->
+                <!--android:id="@+id/et_water_consumer_number"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/margin_normal"-->
+                <!--android:background="@drawable/round_corner_filled_green_background"-->
+                <!--android:drawableLeft="@drawable/ic_password_white"-->
+                <!--android:drawablePadding="@dimen/padding_large"-->
+                <!--android:hint="@string/water_consumer_number"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="12"-->
+                <!--android:padding="@dimen/padding_medium"-->
+                <!--android:singleLine="true"-->
+                <!--android:textColor="@color/colorWhite"-->
+                <!--android:textColorHint="@color/colorLightWhite"-->
+                <!--android:textSize="@dimen/text_size_medium" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/et_electricity_consumer_number"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/margin_normal"-->
+                <!--android:background="@drawable/round_corner_filled_green_background"-->
+                <!--android:drawableLeft="@drawable/ic_password_white"-->
+                <!--android:drawablePadding="@dimen/padding_large"-->
+                <!--android:hint="@string/electricity_consumer_number"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="12"-->
+                <!--android:padding="@dimen/padding_medium"-->
+                <!--android:singleLine="true"-->
+                <!--android:textColor="@color/colorWhite"-->
+                <!--android:textColorHint="@color/colorLightWhite"-->
+                <!--android:textSize="@dimen/text_size_medium" />-->
+
+                <LinearLayout
+                    android:id="@+id/gender_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:background="@drawable/round_corner_filled_green_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:paddingLeft="@dimen/padding_medium"
+                    android:paddingRight="@dimen/padding_medium"
+                    android:paddingTop="@dimen/padding_small">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@drawable/ic_gender_white"
+                        android:drawablePadding="@dimen/padding_large"
+                        android:text="@string/gender"
+                        android:textColor="@color/colorLightWhite"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <Spinner
+                        android:id="@+id/gender_spinner"
+                        style="@android:style/Widget.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height_normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="32dp"
+                        android:layout_weight="1" />
+
+                    <!--<RadioGroup-->
+                    <!--android:id="@+id/gender_radio_group"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight="0.5"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<RadioButton-->
+                    <!--android:id="@+id/cb_female"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="@string/female"-->
+                    <!--android:textColor="@color/colorWhite"-->
+                    <!--android:theme="@style/CheckBoxTheme" />-->
+
+                    <!--<RadioButton-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="@string/male"-->
+                    <!--android:textColor="@color/colorWhite"-->
+                    <!--android:theme="@style/CheckBoxTheme" />-->
+                    <!--</RadioGroup>-->
+                </LinearLayout>
+
+                <com.citizen.fmc.utils.ButtonView
+                    android:id="@+id/register_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_normal"
+                    android:layout_marginTop="@dimen/margin_extra_large"
+                    android:gravity="center"
+                    android:text="@string/register"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold"
+                    app:buttonColor="@color/colorDarkBlue"
+                    app:cornerRadius="@dimen/corner_radius_small" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

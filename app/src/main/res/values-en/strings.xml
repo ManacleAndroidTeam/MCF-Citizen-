@@ -1,0 +1,272 @@
+<resources>
+    <!--TODO: Modules Name String-->
+    <string name="Home">Home</string>
+    <string name="Profile">Profile</string>
+    <string name="FrequentlyAskedQues">Frequently Asked Ques.</string>
+    <string name="Feedback">Feedback</string>
+    <string name="RateUs">Rate Us</string>
+    <string name="Logout">Logout</string>
+    <string name="ChangeLanguage">Change Language</string>
+    <string name="please_wait_dialog_text"><i>Please hold on…</i></string>
+    <string name="Hindi" translatable="false">Hindi</string>
+    <string name="English" translatable="false">English</string>
+    <string name="Ndmc" translatable="false">MCF</string>
+    <string name="Connect_with_ndmc" translatable="false">Connect With MCF</string>
+    <string name="smart_meter" translatable="false">Smart Meter</string>
+    <string name="quick_pay" translatable="false">Quick Pay</string>
+    <string name="complaints" translatable="false">Complaints</string>
+    <string name="air_pollution" translatable="false">Air Pollution</string>
+    <string name="helpline" translatable="false">Helpline 24*7</string>
+    <string name="startups" translatable="false">Startups</string>
+    <string name="swimming_pool" translatable="false">Swimming Pool Registration</string>
+    <string name="who_serves_you" translatable="false">Who Serves You</string>
+    <string name="what_near_me" translatable="false">What Near Me</string>
+    <string name="traffic_and_parking" translatable="false">Traffic And Parking</string>
+    <string name="door_to_door_collection" translatable="false">Door To Door Collection</string>
+    <string name="tree_in_ndmc" translatable="false">Tree In MCF</string>
+    <string name="all_citizen_services" translatable="false">All Citizen Services</string>
+    <string name="sports_coaching" translatable="false">Sports Coaching</string>
+    <string name="employee_corner" translatable="false">Employee Corner</string>
+    <string name="garbage_vehicle_tracking" translatable="false">Garbage Vehicle Tracking</string>
+
+    <string name="ptu_dashboard" translatable="false">PTU Dashboard</string>
+    <string name="smart_bike" translatable="false">Smart Bike</string>
+    <string name="opd_registration" translatable="false">OPD Registration</string>
+    <string name="daily_treated_water_test" translatable="false">Daily Treated Water Test</string>
+    <string name="monitor_water_quality" translatable="false">Monitor Water Quality</string>
+    <string name="important_information" translatable="false">Important Information</string>
+    <string name="e_waste" translatable="false">e_Waste</string>
+    <string name="pensioner_portal" translatable="false">Pensioner Portal</string>
+    <string name="e_hospital" translatable="false">e_Hospital</string>
+
+    <!--TODO: Sub Modules Name String-->
+    <string name="about_ndmc" translatable="false">About MCF</string>
+    <string name="directory" translatable="false">Directory</string>
+    <string name="ndmc_history" translatable="false">MCF History</string>
+    <string name="website" translatable="false">Website</string>
+    <string name="what_in_the_news_today" translatable="false">What in the News Today</string>
+    <string name="facebook" translatable="false">Facebook</string>
+    <string name="ndmc_toll_free_number" translatable="false">MCF Toll Free Number</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="write_feedback" translatable="false">Write Feedback</string>
+    <string name="department" translatable="false">Department</string>
+    <string name="EmailAdd" translatable="false">E-Mail Address</string>
+    <string name="m_no" translatable="false">Mobile Number</string>
+    <string name="write_feedback1" translatable="false">Write Feedback(*)</string>
+    <string name="your_mob_num"><i>Your Mobile Number</i></string>
+    <string name="three_hundred_letters_text"><i>You have 300 letters </i></string>
+    <string name="submit">Submit</string>
+    <string name="water_bill" translatable="false">Water Bill</string>
+    <string name="electricity_bill" translatable="false">Electricity Bill</string>
+    <string name="estate_bill" translatable="false">Estate Bill</string>
+    <string name="property_tax_bill" translatable="false">Property Tax Bill</string>
+    <string name="select_a_cat" translatable="false">Select a category</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <!--TODO: Complains Sub Modules Names-->
+    <string name="create_new_complaint" translatable="false">Create New Complaint</string>
+    <string name="my_complaints" translatable="false">My Complaints</string>
+    <string name="view_all_complaints" translatable="false">View All Complaints</string>
+    <string name="ndmc_toll_free_number1" translatable="false">MCF Toll Free Number</string>
+
+
+    <!--TODO: HELPLINE NO-->
+    <string name="aiims_hospital_central_enquiry" translatable="false">AIIMS Hospital (Central Enquiry)</string>
+    <string name="ambulance_service_control_room" translatable="false">Ambulance Service (Control Room)</string>
+    <string name="cph_hospital" translatable="false">CPH Hospital (MCF)</string>
+    <string name="delhi_police_control_room" translatable="false">Delhi Police (Control Room)</string>
+    <string name="delhi_police_senior_citizen" translatable="false">Delhi Police (Senior Citizen Cell)</string>
+    <string name="delhi_police_traffic_unit" translatable="false">Delhi Police (Traffic Unit)</string>
+    <string name="delhi_police_women_in_distress" translatable="false">Delhi Police (Women in Distress)</string>
+    <string name="disaster_helpline" translatable="false">Disaster Helpline</string>
+    <string name="fire_service" translatable="false">Fire Service (Control Room)</string>
+    <string name="lhmc_ksc_hospital" translatable="false">LHMC KSC Hospital (PBX Number)</string>
+    <string name="lhmc_sks_hospital" translatable="false">LHMC SSK Hospital (PBX Number)</string>
+    <string name="ndmc_control_room" translatable="false">MCF (Control Room)</string>
+    <string name="rml_hospital" translatable="false">RML Hospital (EPBAX Number)</string>
+
+    <string name="rml_hospital_address" translatable="false">Dr.Ram Manohar Lohia Hospital,New Delhi</string>
+    <string name="ndmc_control_room_address" translatable="false">Faridabad Municipal Corporation</string>
+    <string name="lhmc_sks_hospital_address" translatable="false">Lady Hardinge Medical College and Associated Smt. Sucheta Kriplani Hospital,New Delhi</string>
+    <string name="lhmc_ksc_hospital_address" translatable="false">Lady Hardinge Medical College and Associated Kalawati Saran Children Hospital,New Delhi</string>
+    <string name="disaster_helpline_address" translatable="false">Delhi Disaster Management Authority (DDMA)</string>
+    <string name="cph_hospital_address" translatable="false">Charak Palika Hospital, New Delhi</string>
+    <string name="ambulance_service_control_room_address" translatable="false">Centralised Accident and Trauma Services (CATS)</string>
+    <string name="aiims_hospital_address" translatable="false">All India Institute of Medical Sciences, New Delhi</string>
+
+    <!--TODO: Traffic and Parking-->
+
+    <string name="traffic" translatable="false">Traffic</string>
+    <string name="smart_parking_summary" translatable="false">Smart Parking Summary</string>
+    <string name="ndmc_smart_parking" translatable="false">MCF Smart Parking</string>
+
+
+    <!--TODO: All Citizen Services-->
+    <string name="baratghar" translatable="false">Baratghar</string>
+    <string name="birth_certificate" translatable="false">Birth Certificate</string>
+    <string name="building_approval" translatable="false">Building Plan Approval</string>
+    <string name="child_name_inclusion" translatable="false">Child Name Inclusion</string>
+    <string name="death_certificate" translatable="false">Death Certificate</string>
+    <string name="online_health_license" translatable="false">Online Health License</string>
+    <string name="still_birth_certificate" translatable="false">Still Birth Certificate</string>
+    <string name="yellow_fever_vaccination" translatable="false">Yellow Fever Vaccination</string>
+
+
+    <!--TODO: Employee Corner-->
+    <string name="employee_corner_attendance_dashboard" translatable="false">Attendance Dashboard</string>
+
+    <!--TODO: Important Information Sub Modules-->
+    <string name="budget_2018_19" translatable="false">Budget 2018-19</string>
+    <string name="clean_ndmc" translatable="false">Clean MCF</string>
+    <string name="cyber_security" translatable="false">Cyber Security</string>
+    <string name="e_courts" translatable="false">e-Courts</string>
+    <string name="faqs" translatable="false">FAQs</string>
+    <string name="fight_dengue_chikungunya" translatable="false">Fight Dengue / Chikungunya</string>
+    <string name="ndmc_walk" translatable="false">MCF Walk</string>
+    <string name="pm_relief_fund" translatable="false">PM Relief Fund</string>
+    <string name="rain_water_harvesting" translatable="false">Rain Water Harvesting</string>
+    <string name="view_medical_stock" translatable="false">View Medical Stock</string>
+    <string name="virtual_tour_smart_toilets" translatable="false">Virtual Tour Smart Toilets</string>
+
+    <!--TODO: Whats's Near Me Sub Modules-->
+    <string name="whats_near_me_id_atms" translatable="false">ATMs</string>
+    <string name="what_near_me_baratghars" translatable="false">Baratghars</string>
+    <string name="whats_near_me_bus_stands_dtc" translatable="false">Bus Stands (DTC)</string>
+    <string name="whats_near_me_business_directory" translatable="false">Business Directory</string>
+    <string name="whats_near_me_citizen_faciliation_centers_ndmc" translatable="false">Citizen Facilitation Centers (MCF)</string>
+    <string name="whats_near_me_clinic_dispensaries" translatable="false">Clinics / Dispensaries</string>
+    <string name="whats_near_me_community_centers" translatable="false">Community Centers</string>
+    <string name="whats_near_me_construction_and_demolition_waste_bins" translatable="false">Construction And Demolition Waste (Malba) Bins</string>
+    <string name="whats_near_me_emabssies_high_commissions" translatable="false">Embassies / High Commissions</string>
+
+    <string name="whats_near_me_hospitals" translatable="false">Hospitals</string>
+    <string name="whats_near_me_litter_bins" translatable="false">Litter Bins</string>
+    <string name="whats_near_me_markets" translatable="false">Markets</string>
+    <string name="whats_near_me_metro_stations" translatable="false">Metro Stations</string>
+    <string name="whats_near_me_monuments" translatable="false">Monuments</string>
+    <string name="whats_near_me_ndmc_gyms" translatable="false">MCF Gyms</string>
+    <string name="whats_near_me_ndmc_open_gyms_in_park" translatable="false">MCF Open Gyms (in parks)</string>
+    <string name="whats_near_me_ndmc_swimming" translatable="false">MCF Swimming Pools</string>
+    <string name="whats_near_me_pharmacies" translatable="false">Pharmacies</string>
+    <string name="whats_near_me_physiotherapy_centers" translatable="false">Physiotherapy Centers</string>
+    <string name="whats_near_me_police_stations" translatable="false">Police Stations</string>
+    <string name="whats_near_me_postal_codes" translatable="false">Postal Codes</string>
+    <string name="whats_near_me_public_toilets" translatable="false">Public Toilets</string>
+    <string name="whats_near_me_schools" translatable="false">Schools</string>
+    <string name="whats_near_me_speed_limits" translatable="false">Speed Limits</string>
+    <string name="whats_near_me_stadiums" translatable="false">Stadiums</string>
+    <string name="whats_near_me_water_atms" translatable="false">Water ATMs</string>
+    <string name="tree_near_by_me" translatable="false">Tree Near By Me</string>
+    <string name="qr_near_by_me" translatable="false">QR Near By Me</string>
+    <string name="whats_near_me_trolley_data" translatable="false">Trolley Data</string>
+    <string name="whats_near_me_twin_bins" translatable="false">Twin Bins</string>
+    <string name="whats_near_me_veterinary_clients" translatable="false">Veterinary Clinics</string>
+
+
+    <string name="text_all_fields_mandatory"><u>Mandatory Fields* </u></string>
+    <string name="Information">information</string>
+    <string name="not_in_ndmc_area" translatable="false">Not in MCF Area !</string>
+    <string name="ok">ok</string>
+    <string name="comp_image">Complaint Image</string>
+    <string name="select_category_text"><i>Click here to select a Category</i></string>
+    <string name="complaint_description">Complaint Description</string>
+    <string name="complaint_address">Complaint Address</string>
+    <string name="two_hundred_letters_text"><i>Not more than 200 letters !</i></string>
+    <string name="geo_info_text">Geo Location Data</string>
+    <string name="geo_address_text"><i>Your Geo Address</i></string>
+    <string name="no_results_found">no results found !!!</string>
+    <string name="complaint_status" translatable="false">Complaint Status</string>
+    <string name="Vote">Vote</string>
+    <string name="reopne">RE-OPEN</string>
+    <string name="from_hint">From</string>
+    <string name="to_hint">To</string>
+    <string name="complaint_duration">Complaint Duration</string>
+    <string name="image_capture_text"><i><b>CAPTURE</b> an image\nOR\nSelect an image from <b>GALLERY</b></i></string>
+    <string name="you_are_out_of_ndmc" translatable="false">You are out of MCF Area.Please register your complaint from MCF Area.</string>
+
+    <string name="complaint">Complaint</string>
+    <string name="start" translatable="false">Start</string>
+    <string name="notification_title">Title</string>
+    <string name="notification_date_time">date time</string>
+    <string name="welcome" translatable="false">Welcome</string>
+    <string name="filter_by" translatable="false">Filter By</string>
+    <string name="text_copyright">Copyright © 2018, All Rights Reserved</string>
+    <string name="text_link_company_title">Manacle Technologies Pvt. Ltd.</string>
+    <string name="mobile_no" translatable="false">Mobile No.</string>
+    <string name="change_pwd" translatable="false">change password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password"><i>Create New Password</i></string>
+    <string name="re_enter_password">Re-enter New Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_comment"><i>Add a comment</i></string>
+    <string name="scan_qr" translatable="false">Scan Qr</string>
+    <string name="qr_code" translatable="false">QR Code</string>
+    <string name="Segragate" translatable="false">Segragate</string>
+    <string name="NonSegragate" translatable="false">Non-Segragate</string>
+    <string name="first_name"><i>First Name</i></string>
+    <string name="last_name"><i>Last Name</i></string>
+    <string name="update_your_profile"><i>update your profile</i></string>
+    <string name="email_or_phone"><i>Username(E-mail or Mobile No.)</i></string>
+    <string name="confirm_password"><i>Confirm New Password</i></string>
+    <string name="gender">Gender</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="update">Update</string>
+    <string name="feedback_image">Feedback Image</string>
+    <string name="locked">Locked</string>
+    <string name="please_scan_qr_code">Please Scan QR Code Below</string>
+    <string name="or">OR</string>
+    <string name="please_type_ndn_code">Please Type NDDN Code below</string>
+    <string name="type_ndn_code">Type NDDN Code</string>
+    <string name="clean_bin">Clean Bin</string>
+    <string name="GoodBehaviour">Good Behaviour</string>
+    <string name="SatisfactionRating">Satisfaction Rating</string>
+    <string name="SegregateBinNotused">Segregate Bin Not used</string>
+    <string name="BadBehaviour">Bad Behaviour</string>
+    <string name="NotSupportive">Not Supportive</string>
+    <string name="Selectanyone">Select any one</string>
+    <string name="GiveYourFeedback">Give Your Feedback</string>
+    <string name="user_not_exist">User does not exist or not \nactivated !!!</string>
+    <string name="edit_photo">Edit Photo</string>
+    <string name="Username">Username</string>
+    <string name="AlternateMobileNumber">Alternate Mobile Number</string>
+    <string name="Dateofbirth">Date of birth</string>
+    <string name="Whatsyourgender">What your gender ?</string>
+    <string name="yourchoiceyourusername">Your choice, your username !</string>
+    <string name="yourfirstnameismendatory">Your first name is mandatory !</string>
+    <string name="doyouhaveanylastname">Do you have any last name ?</string>
+    <string name="weknowyourhatespams">We know, you hate spams, so please calm !</string>
+    <string name="alsowedontdisturbyou">Also, we do not disturb you !</string>
+    <string name="itsonyouanothermobileno">Its on you, another mobile number !</string>
+    <string name="Yourhappybirthday">Your happy birthday !</string>
+    <string name="where_you_want">WHERE DO YOU WANT THE OTP ?</string>
+    <string name="otp_con">If you want the OTP through SMS,then choose SMS or through email,then choose email
+    and enter field accordingly.</string>
+    <string name="viasms">via SMS</string>
+    <string name="viaemail">via EMAIL</string>
+    <string name="next">Next</string>
+    <string name="otp">OTP</string>
+    <string name="otp_content">Please type the verification code sent to your mobile or email.</string>
+    <string name="resend_code_con">RESEND CODE</string>
+    <string name="con">Continue</string>
+    <string name="loginorregister">login or register</string>
+    <string name="password"><i>Password</i></string>
+    <string name="forgot_pwd">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="register_now">Register Now</string>
+    <string name="connect_via">or connect via</string>
+    <string name="login_facebook_text">Facebook</string>
+    <string name="login_google_text">Google</string>
+    <string name="fdp_content">To reset your account password,enter the username then click on
+    next for next process.</string>
+    <string name="change_password">Change password successfully !</string>
+    <string name="nav_logout" translatable="false">Logout</string>
+    <string name="info_text_logout" translatable="false">Do you really want to Logout ?</string>
+    <string name="not_now" translatable="false">not now</string>
+    <string name="yes" translatable="false">yes</string>
+    <string name="loading_web_page" translatable="false">"Loading web page..."</string>
+    <string name="dashboard_con" translatable="false">Faridabad Municipal Council</string>
+    <string name="aqi_hint" translatable="false">40 AQI</string>
+    <string name="aqi" translatable="false">AQI</string>
+    <string name="app_name" translatable="false">MCF 311</string>
+    <string name="please_check_your_internet_connection" translatable="false">Please check your internet connection and try again !</string>
+    <string name="refresh" translatable="false">Refresh</string></resources>

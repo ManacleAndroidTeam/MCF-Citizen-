@@ -1,0 +1,4 @@
+include ':app'
+include ':aFileChooser'
+include ':library1'
+rootProject.name='MCF(CITIZEN)'

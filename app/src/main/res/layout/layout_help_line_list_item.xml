@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_item_selector"
+    android:clipChildren="false"
+    android:padding="@dimen/padding_medium">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/list_image_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:failureImage="@drawable/place_holder_no_image"
+        app:progressBarAutoRotateInterval="1000"
+        app:progressBarImage="@drawable/ic_loading_small_dots"
+        app:retryImage="@drawable/ic_loading_small_dots" />
+
+    <ImageView
+        android:id="@+id/list_dialer_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_small"
+        android:background="@drawable/round_corner_ripple_text_view"
+        android:padding="@dimen/padding_small"
+        app:srcCompat="@drawable/ic_call_24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_toLeftOf="@id/list_dialer_image_view"
+        android:layout_toRightOf="@id/list_image_view"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/list_item_text_color_selector"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/address_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_small"
+            android:textColor="@drawable/list_item_grey_text_color_selector"
+            android:textSize="@dimen/text_size_extra_small" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_frame_with_image_view" />
+
+        <include
+            layout="@layout/layout_no_data_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?android:actionBarSize" />
+
+        <TextView
+            android:id="@+id/swipe_down_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableEnd="@drawable/ic_refresh_24dp"
+            android:drawablePadding="@dimen/padding_medium"
+            android:gravity="center"
+            android:padding="@dimen/padding_large"
+            android:text="@string/swipe_to_refresh"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#8f9e92"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_normal"
+            app:cardBackgroundColor="@color/colorTransparentBlack"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="@dimen/elevation_small"
+            app:cardUseCompatPadding="false">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:theme="@style/SearchViewTheme"
+                app:closeIcon="@drawable/ic_clear_24dp"
+                app:defaultQueryHint="@string/search"
+                app:iconifiedByDefault="true"
+                app:queryBackground="@null"
+                app:queryHint="@string/search"
+                app:searchHintIcon="@drawable/ic_search_24dp"
+                app:searchIcon="@drawable/ic_search_24dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_card_view"
+            android:visibility="visible">
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/main_recycler"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:clipToPadding="false"-->
+            <!--android:scrollbars="none" />-->
+
+            <ListView
+                android:id="@+id/complaints_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include
+            layout="@layout/layout_complaints_search_tab"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/complaints_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/margin_medium"
+        app:backgroundTint="@color/colorLightBlue"
+        app:borderWidth="0dp"
+        app:elevation="@dimen/elevation_small"
+        app:fabSize="normal"
+        app:pressedTranslationZ="@dimen/elevation_medium"
+        app:rippleColor="@color/colorDarkBlue"
+        app:srcCompat="@drawable/ic_add"
+        app:useCompatPadding="true" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

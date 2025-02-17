@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880582842012",
+    "project_id": "mcf-citizen",
+    "storage_bucket": "mcf-citizen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880582842012:android:7c9587a7ba17b9878abf59",
+        "android_client_info": {
+          "package_name": "com.citizen.fmc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGoPNgi9BcZAtMoQOTfzV3SMHywXKRy1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

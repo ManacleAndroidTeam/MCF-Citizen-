@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/corner_radius_small"
+        app:cardElevation="@dimen/elevation_small"
+        app:cardUseCompatPadding="true">
+
+        <EditText
+            android:id="@+id/feedback_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="@string/three_hundred_letters_text"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="300"
+            android:padding="@dimen/padding_medium"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/text_size_small" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/corner_radius_small"
+        app:cardElevation="@dimen/elevation_small"
+        app:cardUseCompatPadding="true">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/feedback_simple_drawee_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:failureImage="@drawable/place_holder_no_image"
+            app:progressBarAutoRotateInterval="1000"
+            app:progressBarImage="@drawable/ic_loading"
+            app:retryImage="@drawable/ic_loading" />
+
+        <RelativeLayout
+            android:id="@+id/feedback_image_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/feedback_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/image_capture_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="@string/image_capture_text"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/feedback_image_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_add_a_photo_24dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.citizen.fmc.utils.ButtonView
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_normal"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:text="Submit"
+        android:textAllCaps="true"
+        android:layout_margin="@dimen/margin_10"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:buttonColor="@color/colorDarkBlue"
+        app:cornerRadius="@dimen/corner_radius_small" />
+
+
+</LinearLayout>
