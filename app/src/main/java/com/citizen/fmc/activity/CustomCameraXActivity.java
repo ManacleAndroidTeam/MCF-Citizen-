@@ -10,10 +10,15 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.canhub.cropper.CropImageContract;
+import com.canhub.cropper.CropImageContractOptions;
 import com.citizen.fmc.R;
 import com.citizen.fmc.utils.Constants;
+import com.citizen.fmc.utils.ImageProcessor;
+import com.citizen.fmc.utils.PortraitImage;
 import com.citizen.fmc.utils.Utils;
 import com.google.android.cameraview.CameraView;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -43,6 +48,7 @@ import androidx.core.content.ContextCompat;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -68,6 +74,8 @@ public class CustomCameraXActivity extends AppCompatActivity {
     String uniqueId = "";
     ImageButton state_change;
     String cameraChange = "";
+    private PortraitImage imageProcessor;
+    String imageAnalysis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +83,7 @@ public class CustomCameraXActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom_camera_x);
 
         mContext = CustomCameraXActivity.this;
+        imageProcessor = new PortraitImage(this);
         mCameraView = findViewById(R.id.previewView);
         isBackCamera = getIntent().getBooleanExtra(Constants.KEY_IS_BACK_CAMERA, false);
         captureImage = findViewById(R.id.custom_image_button);
@@ -224,22 +233,44 @@ public class CustomCameraXActivity extends AppCompatActivity {
         }
     }
 
-    public void SubmitData()
-    {
+   /* public void SubmitData() {
         if (_capturedImageFile!=null)
         {
-            image = _capturedImageFile.toString();
-            Intent intent = new Intent();
-            intent.putExtra("MCF_Citizen_Image", image);
-            intent.putExtra("resultStatus", "DONE");
-            setResult(RESULT_OK, intent);
-            finish();
+            image = String.valueOf(getFileFromUri(Uri.fromFile(_capturedImageFile)));
+            if (image != null) {
+               String image1 = String.valueOf(imageProcessor.fixImageRotation(new File(image)));
+                Intent intent = new Intent();
+                intent.putExtra("MCF_Citizen_Image", image1);
+                intent.putExtra("resultStatus", "DONE");
+                setResult(RESULT_OK, intent);
+                finish();
+            } else {
+
+            }
         }
         else
         {
             Constants.customToast(context,"Please Capture Image First",1);
         }
     }
+*/
+   private void  SubmitData() {
+       if (_capturedImageFile != null) {
+           Uri imageUri = Uri.fromFile(_capturedImageFile);
+           File image = getFileFromUri(imageUri);
+           if (image != null) {
+               image = imageProcessor.fixImageRotation(image);
+           }
+           Intent intent = new Intent();
+           intent.putExtra("MCF_Citizen_Image", (image != null) ? image.getPath() : null);
+           intent.putExtra("resultStatus", "DONE");
+
+           setResult(Activity.RESULT_OK, intent);
+           finish();
+       } else {
+           Constants.customToast(getApplicationContext(), "Please Capture Image First", 1);
+       }
+   }
 
     @Override
     protected void onPause() {
@@ -251,6 +282,23 @@ public class CustomCameraXActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         mCameraView.start();
+    }
+    private File getFileFromUri(Uri uri) {
+        File file = new File(getExternalCacheDir(), "cropped_image.jpg");
+        try (InputStream inputStream = getContentResolver().openInputStream(uri);
+             FileOutputStream outputStream = new FileOutputStream(file)) {
+            if (inputStream != null) {
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, length);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return file;
     }
 }
 

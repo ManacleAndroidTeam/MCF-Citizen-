@@ -35,10 +35,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.canhub.cropper.CropImageView;
+import com.citizen.fmc.activity.CustCameraXActivity;
 import com.citizen.fmc.activity.CustomCameraXActivity;
 import com.citizen.fmc.interface_.GetOnItemClick;
+import com.citizen.fmc.utils.ImageProcessor;
 import com.google.android.material.appbar.AppBarLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.core.app.NotificationCompat;
@@ -121,6 +125,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -225,11 +230,14 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
     CardView complaintImageCardView;
     TextView complaintImageTv;
     private ImageView beforeIV,afterIV;
-
+    private Uri imageUri;
+    private ImageProcessor imageProcessor;
+    Uri croppedUri;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
 
         if (this.getArguments() != null) {
             /**
@@ -303,10 +311,12 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
             mapFragment = (MapFragment) activity.getFragmentManager().findFragmentById(R.id.map_fragment);
 
 
+            imagePath = String.valueOf(croppedUri);
             userId = Utils.getUserDetails(activity).getCivilianId();
             compCatList = new ArrayList<>();
             airPollutionComCatlist = new ArrayList<>();
             uniqueId = Utils.generateUniqueId(userId);
+            imageProcessor = new ImageProcessor(requireContext(), cropImageLauncher);
 
             spotsDialog = new SpotsDialog(activity, getResources().getString(R.string.please_wait_dialog_text), R.style.CustomSpotsDialogStyle);
             spotsDialog.setCancelable(false);
@@ -670,23 +680,29 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
     private void setupImageCaptureButton() {
         captureCompIB.setOnClickListener(v -> {
             // Show the dialog to choose image source
-            final CharSequence[] options = {"Choose from Gallery", "Camera", "Cancel"};
+            final CharSequence[] options = {/*"Choose from Gallery",*/ "Camera", "Cancel"};
             AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
             builder.setTitle("Select Image!")
                     .setItems(options, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int item) {
-                            if (options[item].equals("Choose from Gallery")) {
+                           /* if (options[item].equals("Choose from Gallery")) {
                                 // Open gallery
                                 Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                                 startActivityForResult(intent, 101);
 
-                            } else if (options[item].equals("Camera")) {
+                            } else*/ if (options[item].equals("Camera")) {
                                 try {
                                     Intent in = new Intent(getContext(), CustomCameraXActivity.class);
                                     in.putExtra("changeCamera","both");
                                     in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivityForResult(in, 100);
+                                   /* Intent in = new Intent(getContext(), CustCameraXActivity.class);
+                                    in.putExtra("changeCamera","both");
+                                    in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivityForResult(in, 100);*/
+
+                                    //checkCameraPermission();
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -1223,54 +1239,20 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
         return FileProvider.getUriForFile(activity, activity.getPackageName() + ".provider", capturedFile);
     }
 
-
-    ActivityResultLauncher<CropImageContractOptions> cropImage = registerForActivityResult(new CropImageContract(), result -> {
-        if (result.isSuccessful()) {
-            Bitmap cropped = BitmapFactory.decodeFile(result.getUriFilePath(getActivity(), true));
-        }
-
-        if (result.isSuccessful()) {
-            Uri resultUri = result.getOriginalUri();
-            // Get the File path from the Uri
-            String path = FileUtils.getPath(getActivity(), resultUri);
-
-            // Alternatively, use FileUtils.getFile(Context, Uri)
-            if (path != null) {
-                capturedFile = FileUtils.getFile(activity, resultUri);
-                double size = Constants.getFileSize(capturedFile);
-                Log.v(TAG, "file_size(MB): " + size
-                        + "\n file_name: " + capturedFile.getName()
-                        + "\n file_path: " + path);
-                Bitmap bitmap = null;
-                try {
-                    bitmap = BitmapFactory.decodeFile(result.getUriFilePath(getActivity(), true));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        else  {
-            result.getError().printStackTrace();
-//            Constants.customToast(getActivity(), Constants.SOMETHING_WRONG_MSG, 2);
-        }
-    });
-
-    private void launchImageCropper(Uri uri) {
-        CropImageOptions cropImageOptions = new CropImageOptions();
-        cropImageOptions.imageSourceIncludeGallery = false;
-        cropImageOptions.imageSourceIncludeCamera = true;
-        CropImageContractOptions cropImageContractOptions = new CropImageContractOptions(uri, cropImageOptions);
-        cropImage.launch(cropImageContractOptions);
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 100) {
+        if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
             Bundle bundle = data.getExtras();
-            image_path = bundle.getString("MCF_Citizen_Image");
-            Log.d("IMageCapture", image_path);
-            compIV.setImageURI(Uri.parse(image_path));
+            if (bundle != null) {
+                imagePath = bundle.getString("MCF_Citizen_Image");
+                Log.d("ImageCapture", "Image Path: " + imagePath);
+                File imageFile = new File(imagePath);
+                imageUri = Uri.fromFile(imageFile);
+                imageProcessor.cropImage(imageUri);
+            } else {
+                Log.e("ImageCapture", "Bundle is null");
+            }
+            compIV.setImageURI(imageUri);
             imageCaptureTV.setVisibility(View.GONE);
             File imgFile = new File(image_path);
             if (imgFile.exists()) {
@@ -1336,7 +1318,9 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
                         if (_mainUri != null) {
                             // start cropping activity for pre-acquired image saved on the device
                             if (!module_id.equals("68")) {
-                                launchImageCropper(_mainUri);
+                                //launchImageCropper(_mainUri);
+                               // cropImage(imageUri);
+                                imageProcessor.cropImage(imageUri);
                             } else {
                                 String path = FileUtils.getPath(activity, _mainUri);
                                 if (path != null) {
@@ -1428,6 +1412,8 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
             e.printStackTrace();
         }
     }
+
+
 /*    public static String getPath( Context context, Uri uri ) {
         String result = null;
         String[] proj = { MediaStore.Images.Media.DATA };
@@ -1446,6 +1432,128 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
     }*/
 
     /* ====================== Request method for submit complaints ====================== */
+    private final ActivityResultLauncher<CropImageContractOptions> cropImageLauncher =
+          registerForActivityResult(new CropImageContract(), result -> {
+              if (result.isSuccessful()) {
+                  croppedUri = result.getUriContent();
+                  if (croppedUri != null) {
+                      image1 = getFileFromUri(croppedUri);
+
+                      if (image1 != null) {
+                        // imageProcessor.fixImageToPortrait(file);
+                         // compIV.setImageBitmap(uil);
+                          compIV.setImageURI(croppedUri); // Display cropped image
+                          imageCaptureTV.setVisibility(View.GONE);
+                      } else {
+                          Log.d("CropImage", "Failed to get file from URI: " + croppedUri);
+                      }
+                  }
+              }
+          });
+
+    /*private final ActivityResultLauncher<CropImageContractOptions> cropImageLauncher =
+            registerForActivityResult(new CropImageContract(), result -> {
+                if (result.isSuccessful()) {
+                    Uri croppedUri = result.getUriContent();
+                    if (croppedUri != null) {
+                        File file = getFileFromUri(croppedUri);
+                        if (file != null) {
+                            File fixedFile = imageProcessor.fixImageToPortrait(file);
+                            Bitmap fixedBitmap = BitmapFactory.decodeFile(fixedFile.getAbsolutePath());
+                            if (fixedBitmap != null) {
+                                compIV.setImageBitmap(fixedBitmap);
+                            } else {
+                                Log.e("CropImage", "Failed to decode fixed image file.");
+                            }
+                        } else {
+                            Log.e("CropImage", "Failed to get file from URI: " + croppedUri);
+                        }
+                    }
+                }
+            });*/
+
+
+        @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100 && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            openCamera();
+        } else if (requestCode == 101 && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+           // openGallery();
+        } else {
+            //Toast.makeText(this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+        }
+    }
+    private void checkCameraPermission() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) requireContext(), new String[]{Manifest.permission.CAMERA}, 100);
+        } else {
+            openCamera();
+        }
+    }
+    private void openCamera() {
+        File photoFile = createImageFile();
+        if (photoFile != null) {
+            imageUri = FileProvider.getUriForFile(requireContext(), getApplicationContext().getPackageName() + ".provider", photoFile);
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+
+           /* intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);*/
+            cameraLauncher.launch(intent);
+        }
+    }
+    private File createImageFile() {
+        try {
+            File storageDir = requireContext().getExternalFilesDir(null);
+            return File.createTempFile("IMG_", ".jpg", storageDir);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    private File getFileFromUri(Uri uri) {
+        File file = new File(requireContext().getExternalCacheDir(), "cropped_image.jpg");
+        try (InputStream inputStream = requireContext().getContentResolver().openInputStream(uri);
+             FileOutputStream outputStream = new FileOutputStream(file)) {
+
+            if (inputStream != null) {
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, length);
+                }
+            }
+            return file;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    private final ActivityResultLauncher<Intent> cameraLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    // cropImage(imageUri);
+                    imageProcessor.cropImage(imageUri);
+                }
+            });
+
+
+    private void cropImage(Uri imageUri) {
+        CropImageOptions options = new CropImageOptions();
+        options.guidelines = CropImageView.Guidelines.ON;
+        options.aspectRatioX = 1;
+        options.aspectRatioY = 1;
+        //  options.imageFormat = Bitmap.CompressFormat.PNG.name();
+        options.outputCompressQuality = 100;
+        // options.outputRequestSize = 1080;
+        CropImageContractOptions contractOptions = new CropImageContractOptions(imageUri, options);
+        cropImageLauncher.launch(contractOptions);
+    }
+
+
+
     private void requestToSubmitComplaint() {
         try {
             String landmark = landmark_et.getText().toString();
@@ -1732,7 +1840,7 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
                    resultPendingIntent =  PendingIntent.getActivity(activity,
                             0,
                             intent,
-                            PendingIntent.FLAG_CANCEL_CURRENT);
+                           PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         }
                 NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();

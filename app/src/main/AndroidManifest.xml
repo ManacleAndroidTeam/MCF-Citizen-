@@ -39,13 +39,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-
+        <activity
+            android:name=".activity.CustCameraXActivity"
+            android:exported="false" />
         <!-- Declare CustomCameraXActivity here -->
-        <activity android:name=".activity.CustomCameraXActivity"
+        <activity
+            android:name=".activity.CustomCameraXActivity"
             android:label="Camera"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".activity.NearByTreeListDetails"
             android:exported="true" />
@@ -215,12 +216,13 @@
         </service>
 
         <activity
-            android:name=".activity.UserNotificationActivity"
+            android:name="activity.UserNotificationActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeActionBar"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".activity.ForgotpasswordActivity"
             android:exported="true"
@@ -263,7 +265,8 @@
         <activity
             android:name=".activity.ShowComplaintHistoryActivity"
             android:exported="true"
-            android:theme="@style/AppThemeActionBar" />
+            android:theme="@style/AppThemeActionBar"
+            tools:ignore="MissingClass" />
     </application>
 
 </manifest>
