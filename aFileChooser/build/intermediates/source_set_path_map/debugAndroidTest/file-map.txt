@@ -1,8 +1,0 @@
-com.ipaulpro.afilechooser.test.aFileChooser-coordinatorlayout-1.0.0-0 C:\Users\JYOTI PANDEY\.gradle\caches\8.12\transforms\0fe32628cb4a802375b84dc0d81aa280\transformed\coordinatorlayout-1.0.0\res
-com.ipaulpro.afilechooser.test.aFileChooser-media-1.0.0-1 C:\Users\JYOTI PANDEY\.gradle\caches\8.12\transforms\4d79462a1f6a1c3d02991881c798c7fe\transformed\media-1.0.0\res
-com.ipaulpro.afilechooser.test.aFileChooser-core-1.0.0-2 C:\Users\JYOTI PANDEY\.gradle\caches\8.12\transforms\fb3da8c8c8047450879bf86fc039bc31\transformed\core-1.0.0\res
-com.ipaulpro.afilechooser.test.aFileChooser-androidTest-3 C:\Users\JYOTI PANDEY\Desktop\For SetUp project\mcf_citizen_7January\mcf_citizen\aFileChooser\build\generated\res\resValues\androidTest\debug
-com.ipaulpro.afilechooser.test.aFileChooser-mergeDebugAndroidTestResources-4 C:\Users\JYOTI PANDEY\Desktop\For SetUp project\mcf_citizen_7January\mcf_citizen\aFileChooser\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.ipaulpro.afilechooser.test.aFileChooser-mergeDebugAndroidTestResources-5 C:\Users\JYOTI PANDEY\Desktop\For SetUp project\mcf_citizen_7January\mcf_citizen\aFileChooser\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.ipaulpro.afilechooser.test.aFileChooser-merged_res-6 C:\Users\JYOTI PANDEY\Desktop\For SetUp project\mcf_citizen_7January\mcf_citizen\aFileChooser\build\intermediates\merged_res\debugAndroidTest
-com.ipaulpro.afilechooser.test.aFileChooser-packaged_res-7 C:\Users\JYOTI PANDEY\Desktop\For SetUp project\mcf_citizen_7January\mcf_citizen\aFileChooser\build\intermediates\packaged_res\debug

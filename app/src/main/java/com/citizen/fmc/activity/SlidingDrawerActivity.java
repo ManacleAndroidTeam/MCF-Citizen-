@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
  import android.content.res.Resources;
  import android.graphics.Paint;
  import android.net.Uri;
+ import android.os.Build;
  import android.os.Bundle;
 import android.os.Handler;
 
@@ -132,6 +133,12 @@ public class SlidingDrawerActivity extends AppCompatActivity implements Connecti
 
         setupToolbar();
         startService(new Intent(getApplicationContext(),UserNotificationService.class));
+      /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(new Intent(getApplicationContext(), UserNotificationService.class));
+        } else {
+            startService(new Intent(getApplicationContext(), UserNotificationService.class));
+        }*/
+
 
         ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this,
                 mDrawerLayout, toolbar, R.string.app_name, R.string.app_name) {
