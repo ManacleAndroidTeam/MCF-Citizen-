@@ -172,7 +172,9 @@
         <!-- </activity> -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_API_key1" />
+            android:value="AIzaSyAteDiZiAurFBJQ0l9UrM87cz_w_z1XOBQ" />
+        <!--            android:value="@string/google_maps_API_key1"/>-->
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c261a4eb2b74c7574c0fbd26ea3b63c06822fa13" />

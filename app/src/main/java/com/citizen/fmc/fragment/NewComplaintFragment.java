@@ -18,8 +18,10 @@ import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ImageDecoder;
+import android.graphics.Paint;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
@@ -129,7 +131,9 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import dmax.dialog.SpotsDialog;
 import okhttp3.MediaType;
@@ -143,6 +147,7 @@ import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 //import static android.os.Build.VERSION_CODES.R;
 
+import static com.citizen.fmc.utils.Constants.formatDateAndTime;
 import static com.facebook.FacebookSdk.getApplicationContext;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
@@ -233,11 +238,12 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
     private Uri imageUri;
     private ImageProcessor imageProcessor;
     Uri croppedUri;
+    String userName = "";
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
 
         if (this.getArguments() != null) {
             /**
@@ -285,7 +291,6 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
             count_status_text_view = mView.findViewById(R.id.count_status_text_view);
             totalCount_text_view = mView.findViewById(R.id.totalCount_text_view);
 
-
             beforeTextView = mView.findViewById(R.id.before_textView);
             afterTextView = mView.findViewById(R.id.after_textView);
             before_LL = mView.findViewById(R.id.before_linearLayout);
@@ -316,6 +321,7 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
             compCatList = new ArrayList<>();
             airPollutionComCatlist = new ArrayList<>();
             uniqueId = Utils.generateUniqueId(userId);
+            userName = Utils.getUserDetails(activity).getUserName();
             imageProcessor = new ImageProcessor(requireContext(), cropImageLauncher);
 
             spotsDialog = new SpotsDialog(activity, getResources().getString(R.string.please_wait_dialog_text), R.style.CustomSpotsDialogStyle);
@@ -418,6 +424,13 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
         }
 
         mapOnTouchEventListener();
+        String rawDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+        String formattedDateTime = formatDateAndTime(rawDateTime);
+        Log.d("HJEND", formattedDateTime);
+        Log.d("HJEND", userName);
+        Log.d("HJEND", String.valueOf(userLat));
+        Log.d("HJEND", String.valueOf(userLong));
+        Log.d("HJEND", geoAddressTextView.getText().toString().trim());
 
         return mView;
     }
@@ -1545,27 +1558,64 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
         options.guidelines = CropImageView.Guidelines.ON;
         options.aspectRatioX = 1;
         options.aspectRatioY = 1;
-        //  options.imageFormat = Bitmap.CompressFormat.PNG.name();
         options.outputCompressQuality = 100;
         // options.outputRequestSize = 1080;
         CropImageContractOptions contractOptions = new CropImageContractOptions(imageUri, options);
         cropImageLauncher.launch(contractOptions);
     }
 
-
-
-    private void requestToSubmitComplaint() {
+/*    private void requestToSubmitComplaint() {
         try {
             String landmark = landmark_et.getText().toString();
             ApiInterface mApiInterface = Utils.getInterfaceService();
             _shrinkImageFile = new File(image1.getAbsolutePath());
+            Bitmap originalBitmap = BitmapFactory.decodeFile(_shrinkImageFile.getPath());
+            Bitmap latLongBitmap = Bitmap.createBitmap(originalBitmap.getWidth(), originalBitmap.getHeight(), originalBitmap.getConfig());
 
-            Bitmap imageBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(_shrinkImageFile.getPath()), 700, 700, false);
-            try {
-                imageBitmap.compress(Bitmap.CompressFormat.JPEG, 30, new FileOutputStream(_shrinkImageFile));
-            } catch (FileNotFoundException e) {
+            Canvas canvas = new Canvas(latLongBitmap);
+            canvas.drawBitmap(originalBitmap, 0, 0, null);
+
+            Paint backgroundPaint = new Paint();
+            backgroundPaint.setColor(Color.parseColor("#80000000"));
+            int rectHeight = 500;
+            canvas.drawRect(
+                    0,
+                    originalBitmap.getHeight() - rectHeight,
+                    originalBitmap.getWidth(),
+                    originalBitmap.getHeight(),
+                    backgroundPaint
+            );
+            Paint paint = new Paint();
+            paint.setColor(Color.WHITE);
+            paint.setAntiAlias(true);
+            paint.setTextAlign(Paint.Align.CENTER);
+            String latLongText = "Lat: " + userLat + "°" + ", Long: " + userLong + "°";
+            String userNameText = userName;
+            String addressText = "Address: " + geoAddressTextView.getText().toString().trim();
+            int centerX = originalBitmap.getWidth() / 2;
+            int startY = originalBitmap.getHeight() - 170;
+            Paint addressPaint = new Paint(paint);
+            addressPaint.setTextSize(80);
+            addressPaint.setFakeBoldText(true);
+            canvas.drawText(addressText, centerX, startY, addressPaint);
+            paint.setTextSize(70);
+            String rawDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+            String formattedDateTime = formatDateAndTime(rawDateTime);
+            canvas.drawText(userNameText, centerX, startY + 60, paint);
+            canvas.drawText(latLongText, centerX, startY + 120, paint);
+            canvas.drawText(formattedDateTime, centerX, startY + 190, paint);
+            Log.d("HJEND", userName);
+            Log.d("HJEND", latLongText);
+            Log.d("HJEND", addressText);
+
+            try (FileOutputStream out = new FileOutputStream(_shrinkImageFile)) {
+                latLongBitmap.compress(Bitmap.CompressFormat.JPEG, 30, out);
+            } catch (IOException e) {
                 e.printStackTrace();
+                Utils.showSnackBar(activity, parentLayout, "Error saving image", false);
+                return;
             }
+
             Call<JsonObject> mService = mApiInterface.submitComplaint(
                     RequestBody.create(MediaType.parse("multipart/form-data"), compDescET.getText().toString()),
                     RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(userLat)),
@@ -1620,8 +1670,127 @@ public class NewComplaintFragment extends Fragment implements LocationListener,
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
+    private void requestToSubmitComplaint() {
+        try {
+            String landmark = landmark_et.getText().toString();
+            ApiInterface mApiInterface = Utils.getInterfaceService();
+
+            _shrinkImageFile = new File(image1.getAbsolutePath());
+            Bitmap originalBitmap = BitmapFactory.decodeFile(_shrinkImageFile.getPath());
+            Bitmap latLongBitmap = Bitmap.createBitmap(originalBitmap.getWidth(), originalBitmap.getHeight(), originalBitmap.getConfig());
+
+            Canvas canvas = new Canvas(latLongBitmap);
+            canvas.drawBitmap(originalBitmap, 0, 0, null);
+
+            int paddingBottom = 45;
+            int rectHeight = 400;
+            int paddingHorizontal = 70;
+            int rectBottom = originalBitmap.getHeight() - paddingBottom;
+            int rectTop = rectBottom - rectHeight;
+
+            Paint backgroundPaint = new Paint();
+            backgroundPaint.setColor(Color.parseColor("#66000000"));
+            canvas.drawRect(paddingHorizontal, rectTop, originalBitmap.getWidth() - paddingHorizontal, rectBottom, backgroundPaint);
+
+            String latLongText = "Lat: " + userLat + "°" + ", Long: " + userLong + "°";
+            String userNameText = userName;
+            String addressText = "Address: " + geoAddressTextView.getText().toString().trim();
+            String rawDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+            String formattedDateTime = formatDateAndTime(rawDateTime);
+
+            int centerX = originalBitmap.getWidth() / 2;
+
+            Paint paint = new Paint();
+            paint.setColor(Color.WHITE);
+            paint.setAntiAlias(true);
+            paint.setTextAlign(Paint.Align.CENTER);
+
+            Paint addressPaint = new Paint(paint);
+            addressPaint.setTextSize(80);
+            addressPaint.setFakeBoldText(true);
+
+            paint.setTextSize(70);
+
+            // Text Y positions relative to top of the rectangle
+            int textStartY = rectTop + 80; // first line inside black box
+            canvas.drawText(addressText, centerX, textStartY, addressPaint);
+            canvas.drawText(userNameText, centerX, textStartY + 80, paint);
+            canvas.drawText(latLongText, centerX, textStartY + 160, paint);
+            canvas.drawText(formattedDateTime, centerX, textStartY + 240, paint);
+
+            Log.d("HJEND", userName);
+            Log.d("HJEND", latLongText);
+            Log.d("HJEND", addressText);
+            Log.d("HJEND", formattedDateTime);
+
+            try (FileOutputStream out = new FileOutputStream(_shrinkImageFile)) {
+                latLongBitmap.compress(Bitmap.CompressFormat.JPEG, 30, out);
+            } catch (IOException e) {
+                e.printStackTrace();
+                Utils.showSnackBar(activity, parentLayout, "Error saving image", false);
+                return;
+            }
+
+            // Submit API call
+            Call<JsonObject> mService = mApiInterface.submitComplaint(
+                    RequestBody.create(MediaType.parse("multipart/form-data"), compDescET.getText().toString()),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(userLat)),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(userLong)),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(deptId)),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), subDeptId),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), uniqueId),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), geoAddressTextView.getText().toString().trim()),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), compAddET.getText().toString().trim()),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(Constants.APP_TYPE)), String.valueOf(userId),
+                    MultipartBody.Part.createFormData("image_source", _shrinkImageFile.getName(),
+                            RequestBody.create(MediaType.parse("multipart/form-data"), _shrinkImageFile)),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), landmark),
+                    RequestBody.create(MediaType.parse("multipart/form-data"), air_pollution_status)
+            );
+
+            mService.enqueue(new Callback<JsonObject>() {
+                @Override
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    try {
+                        if (response.body() != null) {
+                            JsonObject jsonObject = response.body();
+                            if (jsonObject.get("response").getAsBoolean()) {
+                                String complaintNum = jsonObject.get("complaint_no").getAsString();
+                                showSuccessDialog(complaintNum);
+                                spotsDialog.dismiss();
+                                Log.v(TAG, "Complaint submitted successfully. Complaint No: " + complaintNum);
+                            } else {
+                                spotsDialog.dismiss();
+                                String message = jsonObject.get("message").getAsString().trim();
+                                Log.v(TAG, "Message: " + message);
+                                Utils.showSnackBar(activity, parentLayout, message, false);
+                            }
+                        } else {
+                            spotsDialog.dismiss();
+                            Utils.showSnackBar(activity, parentLayout, Constants.MESSAGE_SOMETHING_WENT_WRONG, false);
+                        }
+                    } catch (Exception e) {
+                        spotsDialog.dismiss();
+                        e.printStackTrace();
+                        Utils.customToast(activity, Constants.MESSAGE_SOMETHING_WENT_WRONG, 0);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    spotsDialog.dismiss();
+                    call.cancel();
+                    t.printStackTrace();
+                    Utils.showSnackBar(activity, parentLayout, Utils.failureMessage(t), false);
+                }
+            });
+
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
 
     /* ================================================================================================= */
 

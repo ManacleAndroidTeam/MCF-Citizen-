@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -13,6 +14,7 @@ import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.browser.customtabs.CustomTabsClient;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.customtabs.CustomTabsServiceConnection;
@@ -32,6 +34,7 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.citizen.fmc.R;
+import com.citizen.fmc.fragment.HomeFragment;
 import com.citizen.fmc.utils.Constants;
 
 import java.util.Locale;
@@ -96,78 +99,94 @@ public class WebViewActivity extends AppCompatActivity {
 //            Log.d("MYWEBVIEWCLIENT", "This url couldn't not be handled by the webclient : " + Uri.parse(url).getHost());
             webView.setWebViewClient(new WebViewClient() {
 
-                //If you will not use this method url links are open in new browser not in web view
-                public boolean shouldOverrideUrlLoading(WebView view, String url1) {
-                    if (url1.contains("//ewbilling")) {
-                        pdfDownload(url1);
-                    }
-                    else
-                    {
-                        view.loadUrl(url1);
-                    }
-                    return true;
+                                         //If you will not use this method url links are open in new browser not in web view
+                                         public boolean shouldOverrideUrlLoading(WebView view, String url1) {
+                                             if (url1.contains("//ewbilling")) {
+                                                 pdfDownload(url1);
+                                             } else {
+                                                 view.loadUrl(url1);
+                                             }
+                                             return true;
 
-                }// This method will be triggered when the Page Started Loading
+                                         }// This method will be triggered when the Page Started Loading
 
-                public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                    if (!swipeRefreshLayout.isRefreshing()) {
-                        spotsDialog.show();
-                    }
-                    super.onPageStarted(view, url, favicon);
-                }
+                                         public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                                             if (!swipeRefreshLayout.isRefreshing()) {
+                                                 spotsDialog.show();
+                                             }
+                                             super.onPageStarted(view, url, favicon);
+                                         }
 
-                //Show loader on url load
-                public void onLoadResource(WebView view, String url) {
-                }
+                                         //Show loader on url load
+                                         public void onLoadResource(WebView view, String url) {
+                                         }
 
-                public void onPageFinished(WebView view, String url) {
-                    try {
-                        if (swipeRefreshLayout.isRefreshing()) {
-                            swipeRefreshLayout.setRefreshing(false);
-                        }
-                        spotsDialog.dismiss();
-                    } catch (Exception exception) {
-                        exception.printStackTrace();
-                    }
-                    super.onPageFinished(view, url);
-                }
+                                         public void onPageFinished(WebView view, String url) {
+                                             try {
+                                                 if (swipeRefreshLayout.isRefreshing()) {
+                                                     swipeRefreshLayout.setRefreshing(false);
+                                                 }
+                                                 spotsDialog.dismiss();
+                                             } catch (Exception exception) {
+                                                 exception.printStackTrace();
+                                             }
+                                             super.onPageFinished(view, url);
+                                         }
 
-                public void onReceivedError(WebView view, int errorCode,
-                                            String description, String failingUrl) {
-                    if (spotsDialog != null) {
-                        if (spotsDialog.isShowing()) {
-                            spotsDialog.dismiss();
-                        }
-                    }
-                    if (swipeRefreshLayout.isRefreshing()) {
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                    super.onReceivedError(view, errorCode, description, failingUrl);
-                }
+                                         public void onReceivedError(WebView view, int errorCode,
+                                                                     String description, String failingUrl) {
+                                             if (spotsDialog != null) {
+                                                 if (spotsDialog.isShowing()) {
+                                                     spotsDialog.dismiss();
+                                                 }
+                                             }
+                                             if (swipeRefreshLayout.isRefreshing()) {
+                                                 swipeRefreshLayout.setRefreshing(false);
+                                             }
+                                             super.onReceivedError(view, errorCode, description, failingUrl);
+                                         }
 
-                @SuppressLint("WebViewClientOnReceivedSslError")
-                @Override
-                public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                    String message = "";
-                    switch (error.getPrimaryError()) {
-                        case SslError.SSL_EXPIRED:
-                            message = "The certificate has expired.";
-                            break;
-                        case SslError.SSL_IDMISMATCH:
-                            message = "The certificate Hostname mismatch.";
-                            break;
-                        case SslError.SSL_NOTYETVALID:
-                            message = "The certificate is not yet valid.";
-                            break;
-                        case SslError.SSL_DATE_INVALID:
-                            message = "The certificate Date is invalid";
-                            break;
-                        case SslError.SSL_UNTRUSTED:
-                            message = "The certificate authority is not trusted.";
-                            break;
-                    }
-                    Constants.customToast(WebViewActivity.this,message,1);
-                    handler.proceed(); // Ignore SSL certificate errors
+                                         @SuppressLint("WebViewClientOnReceivedSslError")
+                                         @Override
+                                         public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+handler.cancel();
+String message = "SSL Certificate Issue";
+                                        /*     switch (error.getPrimaryError()) {
+                                                 case SslError.SSL_EXPIRED:
+                                                     message = "The certificate has expired.";
+                                                     break;
+                                                 case SslError.SSL_IDMISMATCH:
+                                                     message = "The certificate Hostname mismatch.";
+                                                     break;
+                                                 case SslError.SSL_NOTYETVALID:
+                                                     message = "The certificate is not yet valid.";
+                                                     break;
+                                                 case SslError.SSL_DATE_INVALID:
+                                                     message = "The certificate Date is invalid";
+                                                     break;
+                                                 case SslError.SSL_UNTRUSTED:
+                                                     message = "The certificate authority is not trusted.";
+                                                     break;
+                                             }*/
+//                                             Constants.customToast(WebViewActivity.this, message, 1);
+//                    handler.proceed(); // Ignore SSL certificate errors
+                                             new AlertDialog.Builder(WebViewActivity.this)
+                                                     .setTitle("SSL Certificate Error")
+                                                     .setMessage(message)
+                                                     .setCancelable(false)
+                                                     .setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                                                         public void onClick(DialogInterface dialog, int which) {
+                                                             Intent intent = new Intent(WebViewActivity.this , HomeFragment.class);
+                                                             startActivity(intent);
+
+                                                         }
+                                                     })
+                                                     /*.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                                         public void onClick(DialogInterface dialog, int which) {
+                                                             handler.cancel(); // Cancel the request
+                                                         }
+                                                     })*/
+                                                     .show();
                     Log.e("WebViewError", "SSL Error: " + error.toString());
                 }
             });
