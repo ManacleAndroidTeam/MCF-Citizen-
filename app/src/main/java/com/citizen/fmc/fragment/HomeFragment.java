@@ -516,6 +516,7 @@ public class HomeFragment extends Fragment implements ConnectivityReceiver.Conne
                 Intent intent = new Intent(getActivity() , WebViewActivity.class);
                 intent.putExtra(Constants.KEY_TOOL_BAR_TITLE, mList.getModuleTitleName());
                 intent.putExtra(Constants.KEY_WEB_VIEW_URL, mList.getModuleURL());
+
                 startActivity(intent);
             }
             else
